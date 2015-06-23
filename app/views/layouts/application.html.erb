@@ -6,12 +6,25 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <%= google_webfonts_init({
-    google: []
+    google: ['Noto Sans', 'Lato']
   }) %>
 </head>
 <body>
 
-<%= yield %>
+<div class="mass-container header">
+  <h1>
+    Inventory of AV-Olari
+  </h1>
+</div>
+
+<div class="mass-container content">
+  <%= yield %>
+</div>
+
+<div class="footer">
+  © Roope Salmi 2015
+  - <%= link_to 'Source Code', 'https://github.com/ollpu/inventory/' %>
+</div>
 
 </body>
 </html>
