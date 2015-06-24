@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
   root 'index#index'
-  
+  get 'search' => 'search#results'
   resources :logs, :events, :users, :items
 
   # The priority is based upon order of creation: first created -> highest priority.
