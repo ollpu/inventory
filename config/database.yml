@@ -5,12 +5,17 @@
 #   gem 'sqlite3'
 #
 default: &default
+  adapter: postgresql
+  encoding: utf8
+  database: inventory
+  pool: 5
+  username: adminfjesxmk
+  password: 
+
+development:
   adapter: sqlite3
   pool: 5
   timeout: 5000
-
-development:
-  <<: *default
   database: db/development.sqlite3
 
 # Warning: The database defined as "test" will be erased and
