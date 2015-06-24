@@ -1,0 +1,51 @@
+
+@media screen and (max-width: 32cm) {
+  div.mass-container, div.footer {
+    margin: 1em auto;
+    max-width: 28cm - 2cm;
+  }
+}
+
+@media screen and (max-width: 28cm) {
+  div.mass-container, div.footer {
+    margin: 1em 1em;
+  }
+}
+
+@media screen and (max-width: 14cm) {
+  table.nav {
+    .menu-btn, .home {
+      display: inline-block !important;
+    }
+    .home {
+      position: absolute;
+    }
+    .menu-btn {
+      width: 100% !important;
+    }
+    .items, .search {
+      display: none;
+    }
+    .isOpen {
+      display: block;
+    }
+    .items {
+      padding-top: 0.4em;
+      a:first-of-type {
+        padding-left: 0;
+      }
+    }
+  }
+  div.header h1 .trivia {
+    padding-top: 1em;
+    display: block !important;
+  }
+}
+
+@media screen and (max-width: 9cm) {
+  table.nav {
+    form.search input, td.items a {
+      font-size: 12px;
+    }
+  }
+}
