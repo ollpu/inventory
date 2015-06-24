@@ -12,13 +12,13 @@ triviaCycle = ->
   pointer = if pointer < length-1 then pointer + 1 else 0
   
   trivia.data('pointer', pointer)
-  trivia.css('display', 'inline-block')
 
 triviaInit = ->
   trivia = $('ul.trivia')
   items = trivia.find('li')
   
   items.hide()
+  items.eq(0).show()
   trivia.css('display', 'inline-block')
   
   triviaCycle()
