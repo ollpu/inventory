@@ -19,16 +19,21 @@
   </h1>
   <table class="nav">
     <td class="home"><%= link_to 'home', root_url, :class => 'mat-icns' %></td>
+    <td class="mat-icns menu-btn"><a href="javascript:void(0);">menu</a></td>
+    
     <td class="items">
+      
       <%= link_to 'Items', items_path %>
       <%= link_to 'Events', events_path %>
     </td>
+    
     <td class="search">
       <%= form_tag search_path, :class => 'search' do %>
         <%= text_field_tag :query, "", :placeholder => "Search anything" %>
         <%= submit_tag 'search', :class => 'mat-icns' %>
       <% end %>
     </td>
+    
   </table>
 </div>
 

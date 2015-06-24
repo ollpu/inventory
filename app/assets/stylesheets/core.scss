@@ -22,7 +22,7 @@ div.mass-container {
 
 div.header {
   border-radius: 0 0 $radius $radius;
-  margin-top: 0;
+  margin-top: 0 !important;
   background-color: #F0F0F0;
   h1 {
     margin: 0.2rem;
@@ -96,7 +96,8 @@ ul.trivia {
 
 table.nav {
   width: 100%;
-  .home {
+  
+  td.home, td.menu-btn {
     width: 28px;
     padding-left: 0.2em;
     a {
@@ -104,7 +105,13 @@ table.nav {
       color: #444;
     }
   }
-  .items {
+  td.menu-btn {
+    display: none;
+    text-align: right;
+    padding-left: 0;
+    padding-right: 0.2em;
+  }
+  td.items {
     padding-left: 0.4em;
     a {
       font-family: "Lato";
