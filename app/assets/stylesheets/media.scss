@@ -36,9 +36,12 @@
       }
     }
   }
-  div.header h1 .trivia {
-    padding-top: 1em;
-    display: block !important;
+  div.header h1 {
+    font-size: 24px;
+   .trivia {
+      margin: 0.8em 0 -1em 0.4em;
+      display: block !important;
+    }
   }
 }
 
