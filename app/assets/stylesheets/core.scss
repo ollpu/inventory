@@ -15,7 +15,7 @@ div.mass-container {
   font-family: $content_font;
   margin: 1em 6em;
   background-color: white;
-  padding: 0.4em 0.8em;
+  padding: 0.6em 0.8em;
   border-radius: $radius;
   box-shadow: 0px 0px 4px #BBB;
 }
@@ -44,7 +44,7 @@ div.header {
       border: 0px solid grey;
       border-bottom-width: 1px;
       background-color: transparent;
-      padding-bottom: 0.4em;
+      padding-bottom: 0.3em;
       transition-duration: 0.4s;
       font-size: 18px;
       font-family: $content_font;
@@ -52,8 +52,6 @@ div.header {
     input[type='submit'] {
       border: 0;
       padding: 0;
-      position: relative;
-      top: 0.4em;
       font-size: 24px;
     }
     input:hover {
@@ -74,6 +72,9 @@ div.header {
   text-transform: none;
   letter-spacing: normal;
   word-wrap: normal;
+  
+  position: relative;
+  top: 0.2em;
 
   /* Support for all WebKit browsers. */
   -webkit-font-smoothing: antialiased;
@@ -91,6 +92,27 @@ ul.trivia {
   font-size: small;
   color: grey;
   list-style-type: none;
+}
+
+table.nav {
+  width: 100%;
+  .home {
+    width: 28px;
+    padding-left: 0.2em;
+    a {
+      text-decoration: none;
+      color: #444;
+    }
+  }
+  .items {
+    padding-left: 0.4em;
+    a {
+      font-family: "Lato";
+      padding: 0 0.5em;
+      text-decoration: none;
+      color: $link_color;
+    }
+  }
 }
 
 div.content {
