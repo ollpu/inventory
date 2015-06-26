@@ -1,0 +1,8 @@
+<h2>New item<h2>
+
+<%= form_for @item do |f| %>
+  <%= f.label :type, "Type:" %>
+  <%= f.select :type, options_for_select(Item::TYPES) %></br>
+  
+  <%= f.submit %>
+<% end -%>
