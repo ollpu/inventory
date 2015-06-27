@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   
   root 'index#index'
   get 'search' => 'search#results'
-  resources :logs, :events, :users, :items
+  resources :logs, :events, :users
+  resources :items, param: :uid
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
