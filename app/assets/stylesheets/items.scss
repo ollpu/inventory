@@ -1,3 +1,26 @@
 // Place all the styles related to the items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$link_color: #205ba1;
+
+div.item_list {
+  a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    border-bottom: 1px solid gray;
+    padding: 0.2em;
+  }
+  span.title {
+    display: block;
+    color: $link_color;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  span.type {
+    background-color: #DDD;
+    padding: 0 2px;
+    border-radius: 4px;
+  }
+}

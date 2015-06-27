@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   def index
+    @items = Item.first(12)
   end
   
   def new
