@@ -11,6 +11,8 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
     
     @item.save
+    # Use item_path instead of plain @item to force use of item controller
+    # instead of type-specific controller (not implemented (yet))
     redirect_to item_path(@item)
   end
   

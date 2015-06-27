@@ -1,5 +1,8 @@
+// Responsive design selectors (@media)
+
 
 @media screen and (max-width: 32cm) {
+  // Apply max width instead of static padding
   div.mass-container, div.footer {
     margin: 1em auto;
     max-width: 28cm - 2cm;
@@ -7,12 +10,14 @@
 }
 
 @media screen and (max-width: 28cm) {
+  // Small static margin
   div.mass-container, div.footer {
     margin: 1em 1em;
   }
 }
 
 @media screen and (max-width: 14cm) {
+  // Collapse navigation items & search bar into a menu (closed by default)
   table.nav {
     .menu-btn, .home {
       display: inline-block !important;
@@ -37,8 +42,10 @@
     }
   }
   div.header h1 {
+    // Make title font size a tad smaller
     font-size: 24px;
-   .trivia {
+    .trivia {
+      // Mode trivia display under title
       margin: 0.8em 0 -1em 0.4em;
       display: block !important;
     }
@@ -46,6 +53,7 @@
 }
 
 @media screen and (max-width: 9cm) {
+  // Make navigation items & search bar font size smaller
   table.nav {
     form.search input, td.items a {
       font-size: 12px;

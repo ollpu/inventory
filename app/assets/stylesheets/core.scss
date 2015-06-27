@@ -1,8 +1,12 @@
+// Core SCSS file.
+// Should be included on all pages
+
 $content_font: 'Noto Sans';
 $link_color: #205ba1;
 $radius: 0.3em;
 
 html {
+  //Always show scroll-bar to prevent sudden width-changes when navigating pages
   overflow-y: scroll;
 }
 
@@ -14,6 +18,7 @@ body {
 div.mass-container {
   font-family: $content_font;
   margin: 1em 6em;
+  // TODO: Decide on a max-width
   // max-width: 32cm;
   background-color: white;
   padding: 0.6em 0.8em;
@@ -21,7 +26,7 @@ div.mass-container {
   box-shadow: 0px 0px 4px #BBB;
 }
 
-div.header {
+div.header { // Topmost portion of page. Also .mass-container
   border-radius: 0 0 $radius $radius;
   margin-top: 0 !important;
   background-color: #F0F0F0;
@@ -38,10 +43,10 @@ div.header {
       padding: 0;
     }
   }
-  form.search {
+  form.search { // Search field
     margin-right: 0.2em;
     text-align: right;
-    input {
+    input { // Text input & submit button
       border: 0px solid gray;
       border-bottom-width: 1px;
       background-color: transparent;
@@ -50,20 +55,20 @@ div.header {
       font-size: 18px;
       font-family: $content_font;
     }
-    input[type='submit'] {
+    input[type='submit'] { // Submit button
       border: 0;
       padding: 0;
       font-size: 24px;
       color: gray;
     }
-    input:hover {
+    input:hover { //Text input & submit button on hover
       border-color: black;
       color: black;
     }
   }
 }
 
-.mat-icns {
+.mat-icns { // Material Icons (Modified from https://github.com/google/material-design-icons)
   font-family: 'Material Icons' !important;
   font-weight: normal;
   font-style: normal;
@@ -91,30 +96,30 @@ div.header {
   font-feature-settings: 'liga';
 }
 
-ul.trivia {
+ul.trivia { // Trivia display
   font-size: small;
   color: grey;
   list-style-type: none;
 }
 
-table.nav {
+table.nav { // Navigation table
   width: 100%;
   
-  td.home, td.menu-btn {
+  td.home, td.menu-btn { // Home & Menu button containers
     width: 28px;
     padding-left: 0.2em;
-    a {
+    a { // Anchor inside
       text-decoration: none;
       color: #444;
     }
   }
-  td.menu-btn {
+  td.menu-btn { // Menu button container
     display: none;
     text-align: right;
     padding-left: 0;
     padding-right: 0.2em;
   }
-  td.items {
+  td.items { // Navigation links container
     padding-left: 0.4em;
     a {
       font-family: "Lato";
@@ -125,11 +130,11 @@ table.nav {
   }
 }
 
-div.content {
+div.content { // Also .mass-container
   min-height: 200px;
 }
 
-div.footer {
+div.footer { // Bottom display. Not .mass-container
   font-family: $content_font;
   margin: 1em 6em;
   padding: 0.2em 0.4em;
