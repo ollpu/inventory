@@ -24,6 +24,9 @@ module Inventory
     config.active_record.raise_in_transactional_callbacks = true
     
     # Load models from /items subdir
-    config.autoload_paths += %W(#{config.root}/app/models/items)
+    config.autoload_paths += Dir[Rails.root.join('app', 'models', 'items')]
+    
+    # Load locale files recursively
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
   end
 end

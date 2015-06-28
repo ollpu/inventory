@@ -10,19 +10,21 @@ class Item < ActiveRecord::Base
     self.uid = SecureRandom.uuid
   end
   
+  validates :type, presence: true
+  
   ## List of subclasses and their aliases
     # When adding a new subclass, please maintain both TYPES and TYPES_HASH
     # [name, class],
     TYPES = [
-      ['Cable', 'Cable'],
-      ['Device', 'Device'],
-      ['Person', 'Person'],
+      [I18n.t(:cable, scope: [:activerecord, :models]), 'Cable'],
+      [I18n.t(:device, scope: [:activerecord, :models]), 'Device'],
+      [I18n.t(:object, scope: [:activerecord, :models]), 'Object'],
     ]
     # class => name,
     TYPES_HASH = {
-      'Cable' => 'Cable',
-      'Device' => 'Device',
-      'Person' => 'Person',
+      'Cable' => I18n.t(:cable, scope: [:activerecord, :models]),
+      'Device' => I18n.t(:device, scope: [:activerecord, :models]),
+      'Object' => I18n.t(:object, scope: [:activerecord, :models]),
     }
     
     def get_type_name

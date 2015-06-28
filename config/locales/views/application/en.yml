@@ -1,0 +1,13 @@
+
+en:
+  application:
+    trivia:
+      total_items:
+        one: "1 total item"
+        other: "%{count} total items"
+      users:
+        one: "1 user"
+        other: "%{count} users"
+      events:
+        one: "1 event"
+        other: "%{count} events"

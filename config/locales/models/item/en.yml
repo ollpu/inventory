@@ -1,0 +1,10 @@
+
+en:
+  activerecord:
+    models:
+      item: Item
+      cable: Cable
+      device: Device
+      object: Object
+    attributes:
+      type: "Type"

@@ -1,5 +1,5 @@
 <ul class="trivia">
-  <li><%= pluralize(Item.count, 'total item') %></li>
-  <li><%= pluralize(User.count, 'user') %></li>
-  <li><%= pluralize(Event.count, 'event') %></li>
+  <li><%= t '.total_items', count: Item.count %></li>
+  <li><%= t '.users', count: User.count %></li>
+  <li><%= t '.events', count: Event.count %></li>
 </ul>
