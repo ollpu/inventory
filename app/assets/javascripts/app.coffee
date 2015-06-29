@@ -27,7 +27,7 @@ triviaInit = ->
   
 
   
-ready ->
+ready = ->
   triviaInit()
   $('table.nav .menu-btn a').click ->
     $('table.nav .items, table.nav .search').toggleClass('isOpen')
