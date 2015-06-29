@@ -27,7 +27,11 @@ triviaInit = ->
   
 
   
-$(document).ready ->
+ready ->
   triviaInit()
   $('table.nav .menu-btn a').click ->
     $('table.nav .items, table.nav .search').toggleClass('isOpen')
+    
+$(document).ready(ready)
+# For turbolinks
+$(document).on('page:load', ready)
