@@ -14,8 +14,10 @@ class ItemTest < ActiveSupport::TestCase
     item = Item.new
     item.type = "Cable"
     
-    item.save
-    assert_not_empty item.uid, "Item was saved without uid"
+    assert_raises ActiveRecord::RecordInvalid do
+      item.save!
+    end
+    assert_not_nil item.uid, "Item was saved without uid"
   end
   
   test 'type should be present' do

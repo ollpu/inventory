@@ -10,6 +10,10 @@ class Item < ActiveRecord::Base
     self.uid = SecureRandom.uuid
   end
   
+  validates :uid,
+    presence: true,
+    format: { with: /\h{8}-\h{4}-\h{4}-\h{4}-\h{12}/ },
+    length: { is: 36 }
   validates :type, presence: true
   
   ## List of subclasses and their aliases
