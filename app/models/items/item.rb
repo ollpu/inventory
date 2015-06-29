@@ -13,7 +13,8 @@ class Item < ActiveRecord::Base
   validates :uid,
     presence: true,
     format: { with: /\h{8}-\h{4}-\h{4}-\h{4}-\h{12}/ },
-    length: { is: 36 }
+    length: { is: 36 },
+    on: :update
   validates :type, presence: true
   
   ## List of subclasses and their aliases
