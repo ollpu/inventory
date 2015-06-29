@@ -1,0 +1,6 @@
+language: ruby
+rvm:
+  - 2.2.0
+  - 2.0.0-p645 # Current Heroku default
+script:
+  - RAILS_ENV=test bundle exec rake --trace db:migrate test
