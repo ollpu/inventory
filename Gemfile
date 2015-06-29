@@ -48,3 +48,6 @@ end
 
 # Google Webfonts
 gem 'google-webfonts-rails', '~> 0.0.4'
+
+# Coveralls (coveralls.io)
+gem 'coveralls', group: :test, require: false
