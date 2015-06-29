@@ -1,4 +1,13 @@
 
+setIntervalTurbolinks = (targetFunction, millis) ->
+  removeInterval = ->
+    clearInterval intervalId
+    $(document).off('page:load', removeInterval);
+    
+  intervalId = setInterval(targetFunction, millis)
+  $(document).on('page:load', removeInterval)
+
+
 triviaCycle = ->
   trivia = $('ul.trivia')
   pointer = trivia.data('pointer')
@@ -22,7 +31,7 @@ triviaInit = ->
   trivia.css('display', 'inline-block')
   
   triviaCycle()
-  setInterval triviaCycle, 4000
+  setIntervalTurbolinks triviaCycle, 4000
   
   
 
