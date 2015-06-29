@@ -1,4 +1,4 @@
 
 class Cable < Item
-  
+
 end

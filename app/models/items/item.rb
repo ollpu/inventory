@@ -16,15 +16,15 @@ class Item < ActiveRecord::Base
     # When adding a new subclass, please maintain both TYPES and TYPES_HASH
     # [name, class],
     TYPES = [
-      [Cable.model_name.human, 'Cable'],
-      [Device.model_name.human, 'Device'],
-      [Misc.model_name.human, 'Object'],
+      [I18n.t(:cable, scope: [:activerecord, :models]), 'Cable'],
+      [I18n.t(:device, scope: [:activerecord, :models]), 'Device'],
+      [I18n.t(:object, scope: [:activerecord, :models]), 'Object'],
     ]
     # class => name,
     TYPES_HASH = {
-      'Cable' => Cable.model_name.human,
-      'Device' => Device.model_name.human,
-      'Object' => Misc.model_name.human,
+      'Cable' => I18n.t(:cable, scope: [:activerecord, :models]),
+      'Device' => I18n.t(:device, scope: [:activerecord, :models]),
+      'Object' => I18n.t(:object, scope: [:activerecord, :models]),
     }
     
     def get_type_name
