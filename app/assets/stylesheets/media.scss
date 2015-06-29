@@ -26,7 +26,8 @@
       position: absolute;
     }
     .menu-btn {
-      width: 100% !important;
+      margin-left: 100%;
+      left: -1em;
     }
     .items, .search {
       display: none;

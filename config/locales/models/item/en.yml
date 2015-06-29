@@ -3,8 +3,13 @@ en:
   activerecord:
     models:
       item: Item
+      item_all: Items
       cable: Cable
+      cable_all: Cables
       device: Device
-      object: Object
+      device_all: Devices
+      misc: Object
+      misc_all: Objects
     attributes:
-      type: "Type"
+      item:
+        type: "Type:"

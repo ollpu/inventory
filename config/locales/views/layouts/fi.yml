@@ -1,0 +1,10 @@
+
+fi:
+  layouts:
+    application:
+      title: Inventory
+      peer: AV-Olari
+      # %{peer} = peer-string
+      inventory_of: "%{peer}n Inventory"
+      search_anything: "Hae mitä tahansa..."
+      source_code: "Lähdekoodi"

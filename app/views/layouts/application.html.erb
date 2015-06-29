@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Inventory</title>
+  <title><%= t '.title' %></title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -14,7 +14,7 @@
 
 <div class="mass-container header">
   <h1>
-    Inventory of AV-Olari
+    <%= t '.inventory_of', peer: t('.peer') %>
     <%= render 'trivia' %>
   </h1>
   <table class="nav">
@@ -22,14 +22,14 @@
     <td class="mat-icns menu-btn"><a href="javascript:void(0);">menu</a></td>
     
     <td class="items">
-      
-      <%= link_to 'Items', items_path %>
-      <%= link_to 'Events', events_path %>
+      <% _scope = [:activerecord, :models] %>
+      <%= link_to t(:item_all, scope: _scope), items_path %>
+      <%= link_to t(:event_all, scope: _scope), events_path %>
     </td>
     
     <td class="search">
       <%= form_tag search_path, :class => 'search' do %>
-        <%= text_field_tag :query, "", :placeholder => "Search anything" %>
+        <%= text_field_tag :query, "", :placeholder => t('.search_anything') %>
         <%= submit_tag 'search', :class => 'mat-icns' %>
       <% end %>
     </td>
@@ -43,7 +43,7 @@
 
 <div class="footer">
   © Roope Salmi 2015
-  - <%= link_to 'Source Code', 'https://github.com/ollpu/inventory/' %>
+  - <%= link_to t('.source_code'), 'https://github.com/ollpu/inventory/' %>
 </div>
 
 </body>

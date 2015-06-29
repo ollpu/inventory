@@ -1,0 +1,6 @@
+
+en:
+  helpers:
+    submit:
+      create: "Create a %{model}"
+      update: "Save %{model}"

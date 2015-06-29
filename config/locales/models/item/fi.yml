@@ -1,0 +1,15 @@
+
+fi:
+  activerecord:
+    models:
+      item: Kalu
+      item_all: Kalut
+      cable: Kaapeli
+      cable_all: Kaapelit
+      device: Laite
+      device_all: Laitteet
+      misc: Esine
+      misc_all: Esineet
+    attributes:
+      item:
+        type: "Tyyppi:"

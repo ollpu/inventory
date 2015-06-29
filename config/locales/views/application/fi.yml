@@ -1,0 +1,13 @@
+
+fi:
+  application:
+    trivia:
+      total_items:
+        one: "Yhteensä 1 kalu"
+        other: "Yhteensä %{count} kalua"
+      users:
+        one: "1 käyttäjä"
+        other: "%{count} käyttäjää"
+      events:
+        one: "1 tapahtuma"
+        other: "%{count} tapahtumaa"

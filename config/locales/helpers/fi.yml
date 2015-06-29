@@ -1,0 +1,6 @@
+
+fi:
+  helpers:
+    submit:
+      create: "Luo %{model}"
+      update: "Tallenna %{model}"
