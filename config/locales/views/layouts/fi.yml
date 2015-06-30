@@ -6,5 +6,6 @@ fi:
       peer: AV-Olari
       # %{peer} = peer-string
       inventory_of: "%{peer}n Inventory"
+      all: Kaikki
       search_anything: "Hae mitä tahansa..."
       source_code: "Lähdekoodi"

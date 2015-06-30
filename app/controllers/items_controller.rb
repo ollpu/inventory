@@ -1,6 +1,10 @@
 class ItemsController < ApplicationController
   def index
-    @items = Item.first(12)
+    unless params[:type].present?
+      @items = Item.first(12)
+    else
+      @items = Item.where("type = ?", params[:type]).first(12)
+    end
   end
   
   def show

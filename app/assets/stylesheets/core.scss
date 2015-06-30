@@ -4,6 +4,7 @@
 $content_font: 'Noto Sans';
 $link_color: #205ba1;
 $radius: 0.3em;
+$header_bg: #F0F0F0;
 
 html {
   //Always show scroll-bar to prevent sudden width-changes when navigating pages
@@ -29,7 +30,7 @@ div.mass-container {
 div.header { // Topmost portion of page. Also .mass-container
   border-radius: 0 0 $radius $radius;
   margin-top: 0 !important;
-  background-color: #F0F0F0;
+  background-color: $header_bg;
   h1 {
     margin: 0.2rem;
     font-family: Lato;
@@ -126,6 +127,19 @@ table.nav { // Navigation table
       padding: 0 0.5em;
       text-decoration: none;
       color: $link_color;
+    }
+    a+ul {
+      display: none;
+      list-style-type: none;
+      position: absolute;
+      background: $header_bg;
+      padding: 0.3em 0.4em;
+      margin: -0.05em 0;
+      border-radius: 0 0 $radius $radius;
+      box-shadow: 0px 4px 4px -2px #BBB;
+    }
+    a:hover+ul, a+ul:hover {
+      display: block;
     }
   }
 }

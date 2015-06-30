@@ -23,13 +23,13 @@ class Item < ActiveRecord::Base
     TYPES = [
       [I18n.t(:cable, scope: [:activerecord, :models]), 'Cable'],
       [I18n.t(:device, scope: [:activerecord, :models]), 'Device'],
-      [I18n.t(:object, scope: [:activerecord, :models]), 'Object'],
+      [I18n.t(:misc, scope: [:activerecord, :models]), 'Misc'],
     ]
     # class => name,
     TYPES_HASH = {
       'Cable' => I18n.t(:cable, scope: [:activerecord, :models]),
       'Device' => I18n.t(:device, scope: [:activerecord, :models]),
-      'Object' => I18n.t(:object, scope: [:activerecord, :models]),
+      'Misc' => I18n.t(:misc, scope: [:activerecord, :models]),
     }
     
     def get_type_name

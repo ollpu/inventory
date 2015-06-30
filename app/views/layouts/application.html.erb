@@ -23,8 +23,16 @@
     
     <td class="items">
       <% _scope = [:activerecord, :models] %>
-      <%= link_to t(:item_all, scope: _scope), items_path %>
+      
+      <%= link_to t(:item_all, scope: _scope), 'javascript:void(0);' %>
+      <ul>
+        <li><%= link_to t('.all'), items_path %></li>
+        <li><%= link_to t(:cable_all, scope: _scope), items_path(:type => "Cable") %></li>
+        <li><%= link_to t(:device_all, scope: _scope), items_path(:type => "Device") %></li>
+        <li><%= link_to t(:misc_all, scope: _scope), items_path(:type => "Misc") %></li>
+      </ul>
       <%= link_to t(:event_all, scope: _scope), events_path %>
+      <%= link_to t(:user, scope: _scope), users_path %>
     </td>
     
     <td class="search">
