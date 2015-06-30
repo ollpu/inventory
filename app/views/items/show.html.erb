@@ -1,0 +1,8 @@
+<% if @item.present? %>
+<div class="items_show">
+  <h2>Title</h2>
+  <span class="uid"><%= @item.uid %></span>
+</div>
+<% else %>
+  <%= t '.item_not_found' %>
+<% end %>

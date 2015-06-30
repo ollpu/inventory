@@ -3,6 +3,10 @@ class ItemsController < ApplicationController
     @items = Item.first(12)
   end
   
+  def show
+    @item = Item.where("uid LIKE ?", "#{params[:uid]}%").first
+  end
+  
   def new
     @item = Item.new
   end
