@@ -23,7 +23,7 @@
   
   <td class="search">
     <%= form_tag search_path, :class => 'search', :method => 'GET', :enforce_utf8 => false do %>
-      <%= text_field_tag :q, "", placeholder: t('.search_anything') %>
+      <%= text_field_tag :q, "", placeholder: t('.search_anything'), required: true %>
       <%= submit_tag 'search', class: 'mat-icns', name: '' %>
     <% end %>
   </td>

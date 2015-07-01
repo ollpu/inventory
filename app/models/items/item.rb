@@ -15,6 +15,9 @@ class Item < ActiveRecord::Base
     format: { with: /\h{8}-\h{4}-\h{4}-\h{4}-\h{12}/ },
     length: { is: 36 },
     on: :update
+  validates :uid,
+    uniqueness: true,
+    on: :create
   validates :type, presence: true
   
   ## List of subclasses and their aliases
@@ -40,6 +43,12 @@ class Item < ActiveRecord::Base
   # Use uid as an URL parameter instead of id
   def to_param
     self.uid
+  end
+  
+  # Returns a short version of the uid.
+  # Dramatically increases chances of duplicates. Not guaranteed to be unique!
+  def short_uid
+    self.uid.split(/\-/).first
   end
   
   protected

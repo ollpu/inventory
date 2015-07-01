@@ -3,6 +3,15 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 $link_color: #205ba1;
+$content_font: 'Noto Sans';
+
+span.item_type {
+  background-color: #DDD;
+  padding: 0 2px;
+  border-radius: 4px;
+}
+
+span.item_type.core { background-color: #7db9e0; }
 
 div.item_list {
   a {
@@ -18,20 +27,22 @@ div.item_list {
     font-size: 18px;
     font-weight: bold;
   }
-  span.type {
-    background-color: #DDD;
-    padding: 0 2px;
-    border-radius: 4px;
-  }
 }
 
 
 div.items_show {
+  width: 50%;
   h2 {
     margin: 0;
+    display: inline-block;
   }
   .uid {
     font-size: small;
     color: gray;
+  }
+  
+  a.edit {
+    color: gray;
+    text-decoration: none;
   }
 }

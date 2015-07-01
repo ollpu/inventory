@@ -12,7 +12,7 @@ html {
 }
 
 body {
-  background-color: #E9E9E9;
+  background-color: #dae2e9;
   margin: 0;
 }
 
@@ -132,6 +132,8 @@ table.nav { // Navigation table
       display: block;
       list-style-type: none;
       position: absolute;
+      z-index: 10;
+      
       background: $header_bg;
       padding: 0.3em 0.4em;
       margin: -0.05em 0;

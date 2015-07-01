@@ -1,6 +1,11 @@
+
+
 <% if @item.present? %>
 <div class="items_show">
-  <h2>Title</h2>
+  <h2><%= 'Title' %><%# TODO: Return @item.title instead %></h2>
+  <a class="mat-icns edit" href="#edit">edit</a><br/>
+  
+  <span class="item_type core"><%= @item.type %></span><br/>
   <span class="uid"><%= @item.uid %></span>
 </div>
 <% else %>
