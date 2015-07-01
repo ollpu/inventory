@@ -128,7 +128,7 @@ table.nav { // Navigation table
       text-decoration: none;
       color: $link_color;
     }
-    a+ul {
+    a+ul { // Item submenu
       display: block;
       list-style-type: none;
       position: absolute;
@@ -145,8 +145,14 @@ table.nav { // Navigation table
                   box-shadow 2s ease;
       visibility: hidden;
       max-height: 0;
+      
+      hr {
+        margin: 3px 0 0.5px 0;
+        border: 1px solid gray;
+        border-top: none;
+      }
     }
-    a:hover+ul, a+ul:hover {
+    a:hover+ul, a+ul:hover { // Item submenu on hover
       box-shadow: 3px 3px 3px -2px #BBB, -3px 3px 3px -2px #BBB;
       visibility: visible;
       transition-delay: 0s !important;

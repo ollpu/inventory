@@ -6,6 +6,8 @@ en:
       peer: AV-Olari
       # %{peer} = peer-string
       inventory_of: "Inventory of %{peer}"
-      all: All
-      search_anything: "Search anything..."
       source_code: Source Code
+    nav:
+      all: All
+      new: New
+      search_anything: "Search anything..."
