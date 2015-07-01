@@ -1,9 +1,12 @@
-
-<div class="item_list">
-<% @items.each do |item| %>
-  <%= link_to item_path(item) do %>
-    <span class="title">Title</span>
-    <span class="type"><%= item.get_type_name %></span>
+<% unless @items.size == 0 %>
+  <div class="item_list">
+  <% @items.each do |item| %>
+    <%= link_to item_path(item) do %>
+      <span class="title">Title</span>
+      <span class="type"><%= item.get_type_name %></span>
+    <% end -%>
   <% end -%>
+  </div>
+<% else -%>
+  <div class="nothing"><%= t('.nothing_here') %></div>
 <% end -%>
-</div>

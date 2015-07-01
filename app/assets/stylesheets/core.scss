@@ -129,17 +129,32 @@ table.nav { // Navigation table
       color: $link_color;
     }
     a+ul {
-      display: none;
+      display: block;
       list-style-type: none;
       position: absolute;
       background: $header_bg;
       padding: 0.3em 0.4em;
       margin: -0.05em 0;
       border-radius: 0 0 $radius $radius;
-      box-shadow: 0px 4px 4px -2px #BBB;
+      
+      margin-left: -0.4em;
+      overflow: hidden;
+      
+      transition: visibility 0s ease 1s,
+                  max-height 1s ease,
+                  box-shadow 2s ease;
+      visibility: hidden;
+      max-height: 0;
     }
     a:hover+ul, a+ul:hover {
-      display: block;
+      box-shadow: 3px 3px 3px -2px #BBB, -3px 3px 3px -2px #BBB;
+      visibility: visible;
+      transition-delay: 0s !important;
+      transition: visibility 0s ease 1s,
+                  max-height 1s ease,
+                  box-shadow 0.3s ease;
+      opacity: 1;
+      max-height: 100%;
     }
   }
 }

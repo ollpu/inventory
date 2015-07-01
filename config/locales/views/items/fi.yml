@@ -1,5 +1,7 @@
 
 fi:
   items:
+    index:
+      nothing_here: "Täällä ei ole mitään..."
     new:
       title: Uusi kalu

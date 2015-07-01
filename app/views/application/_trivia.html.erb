@@ -1,5 +1,7 @@
-<ul class="trivia">
-  <li><%= t '.total_items', count: Item.count %></li>
-  <li><%= t '.users', count: User.count %></li>
-  <li><%= t '.events', count: Event.count %></li>
-</ul>
+<% cache('main_trivia') do %>
+  <ul class="trivia">
+    <li><%= t '.total_items', count: Item.count %></li>
+    <li><%= t '.users', count: User.count %></li>
+    <li><%= t '.events', count: Event.count %></li>
+  </ul>
+<% end %>

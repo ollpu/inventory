@@ -42,4 +42,10 @@ class Item < ActiveRecord::Base
     self.uid
   end
   
+  protected
+    def after_create
+      # Expire main trivia (includes Item.count)
+      expire_cache 'main_trivia'
+    end
+  
 end

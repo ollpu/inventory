@@ -1,5 +1,7 @@
 
 en:
   items:
+    index:
+      nothing_here: "There's nothing here..."
     new:
       title: New item
