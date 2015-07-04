@@ -2,6 +2,8 @@
 fi:
   items:
     index:
+      list_items_by_type: "Kaikki tyypin %{type} kalut"
+      list_all_items: "Kaikki kalut"
       nothing_here: "Täällä ei ole mitään..."
     new:
       title: Uusi kalu

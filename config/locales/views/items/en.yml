@@ -2,6 +2,8 @@
 en:
   items:
     index:
+      list_items_by_type: "All items with type %{type}"
+      list_all_items: "All items"
       nothing_here: "There's nothing here..."
     new:
       title: New item
