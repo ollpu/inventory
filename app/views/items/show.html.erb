@@ -2,15 +2,26 @@
 
 <% if @item.present? %>
 <div class="items_show">
-  <h2><%= @item.title %></h2>
-  <%= link_to 'edit', '#edit', class: 'mat-icns edit' %>
-  <%= link_to 'delete', item_path(@item),
-    method: :delete,
-    data: { confirm: t('.remove_confirm', title: @item.title) },
-    class: 'mat-icns edit' %><br/>
-  
-  <span class="item_type core"><%= @item.get_type_name %></span><br/>
-  <span class="uid"><%= @item.uid %></span>
+  <%= form_for @item.becomes(Item), html: { class: 'edit_item' } do |f| %>
+    <h2 class="field">
+      <%# Showed when form is .closed  -%>
+      <span class="value"><%= @item.title %></span>
+      <%# Showed when form is .open  -%>
+      <%= f.text_field :title %>
+    </h2>
+    <%= link_to 'edit', '#edit', class: 'mat-icns edit', id: 'edit' %>
+    <%= link_to 'delete', item_path(@item),
+      method: :delete,
+      data: { confirm: t('.remove_confirm', title: @item.title) },
+      class: 'mat-icns edit' %><br/>
+    
+    <span class="item_type core"><%= @item.get_type_name %></span><br/>
+    <span class="uid"><%= @item.uid %></span>
+    
+    <div class="field">
+      <%= f.submit %>
+    </div>
+  <% end -%>
 </div>
 <% else %>
   <%= t '.item_not_found' %>

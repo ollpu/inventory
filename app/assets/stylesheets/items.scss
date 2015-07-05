@@ -51,6 +51,32 @@ div.items_show {
   }
 }
 
+form.edit_item {
+  input[type="text"] {
+    font-size: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+    background-color: transparent;
+    border: none;
+    border-bottom: solid 2px grey;
+    margin-bottom: 0.2em;
+  }
+}
+
+// items#show, viewing mode
+form.edit_item:not(.open) .field {
+  input {
+    display: none;
+  }
+}
+
+// items#show, editing mode
+form.edit_item.open .field {
+  span.value {
+    display: none;
+  }
+}
+
 form.new_item {
   display: table;
   .section {
