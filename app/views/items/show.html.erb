@@ -2,10 +2,14 @@
 
 <% if @item.present? %>
 <div class="items_show">
-  <h2><%= 'Title' %><%# TODO: Return @item.title instead %></h2>
-  <a class="mat-icns edit" href="#edit">edit</a><br/>
+  <h2><%= @item.title %></h2>
+  <%= link_to 'edit', '#edit', class: 'mat-icns edit' %>
+  <%= link_to 'delete', item_path(@item),
+    method: :delete,
+    data: { confirm: t('.remove_confirm', title: @item.title) },
+    class: 'mat-icns edit' %><br/>
   
-  <span class="item_type core"><%= @item.type %></span><br/>
+  <span class="item_type core"><%= @item.get_type_name %></span><br/>
   <span class="uid"><%= @item.uid %></span>
 </div>
 <% else %>

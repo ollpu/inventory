@@ -1,8 +1,18 @@
 <h2><%= t '.title' %><h2>
 
 <%= form_for @item do |f| %>
-  <%= f.label :type %>
-  <%= f.select :type, options_for_select(Item::TYPES) %></br>
+  <div class="section">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
   
-  <%= f.submit %>
+  <div class="section">
+    <%= f.label :type %>
+    <%= f.select :type, options_for_select(Item::TYPES) %>
+  </div>
+  
+  <div class="section">
+    <span class="empty"></span>
+    <%= f.submit %>
+  </div>
 <% end -%>

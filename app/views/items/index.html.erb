@@ -9,7 +9,7 @@
   <div class="item_list">
   <% @items.each do |item| %>
     <%= link_to item_path(item) do %>
-      <span class="title">Title</span>
+      <span class="title"><%= item.title %></span>
       <span class="item_type core"><%= item.get_type_name %></span>
     <% end -%>
   <% end -%>

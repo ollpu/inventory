@@ -18,15 +18,20 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     
-    @item.save
+    @item.save!
     # Use item_path instead of plain @item to force use of item controller
     # instead of type-specific controller (not implemented (yet))
     redirect_to item_path(@item)
   end
   
+  def destroy
+    Item.destroy_all(uid: params[:uid])
+    redirect_to items_path
+  end
+  
   private
   def item_params
-    params.require(:item).permit(:type)
+    params.require(:item).permit(:type, :title)
   end
   
 end

@@ -12,6 +12,8 @@ span.item_type {
 }
 
 span.item_type.core { background-color: #7db9e0; }
+span.item_type.feature { background-color: #e07d7d; }
+
 
 div.item_list {
   a {
@@ -35,6 +37,7 @@ div.items_show {
   h2 {
     margin: 0;
     display: inline-block;
+    margin: 0.1em 0.1em 0.1em 0;
   }
   .uid {
     font-size: small;
@@ -44,5 +47,22 @@ div.items_show {
   a.edit {
     color: gray;
     text-decoration: none;
+    top: 0.12em;
+  }
+}
+
+form.new_item {
+  display: table;
+  .section {
+    display: table-row;
+    label, input, select, span.empty {
+      display: table-cell;
+    }
+    select {
+      width: 100%;
+    }
+    label {
+      padding-right: 0.6em;
+    }
   }
 }

@@ -13,3 +13,4 @@ fi:
     attributes:
       item:
         type: "Tyyppi:"
+        title: "Nimike:"

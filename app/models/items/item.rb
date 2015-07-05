@@ -19,6 +19,9 @@ class Item < ActiveRecord::Base
     uniqueness: true,
     on: :create
   validates :type, presence: true
+  validates :title,
+    presence: true,
+    length: { in: 2..80 }
   
   ## List of subclasses and their aliases
     # When adding a new subclass, please maintain both TYPES and TYPES_HASH

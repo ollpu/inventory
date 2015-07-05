@@ -13,3 +13,4 @@ en:
     attributes:
       item:
         type: "Type:"
+        title: "Title:"
