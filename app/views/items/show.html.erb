@@ -9,7 +9,7 @@
       <%# Showed when form is .open  -%>
       <%= f.text_field :title %>
     </h2>
-    <%= link_to 'edit', '#edit', class: 'mat-icns edit', id: 'edit' %>
+    <%= link_to 'edit', 'javascript:void(0)', class: 'mat-icns edit', id: 'edit' %>
     <%= link_to 'delete', item_path(@item),
       method: :delete,
       data: { confirm: t('.remove_confirm', title: @item.title) },

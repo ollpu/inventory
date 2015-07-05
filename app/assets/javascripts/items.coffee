@@ -8,8 +8,10 @@ edit_toggle = ->
   form.toggleClass 'open'
   if form.hasClass 'open'
     $(edit_button).html 'close'
+    window.location.hash = '#edit'
   else
     $(edit_button).html 'edit'
+    window.location.hash = ''
 
 ready = ->
   if window.location.hash is '#edit'
