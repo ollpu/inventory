@@ -13,6 +13,7 @@ class ItemTest < ActiveSupport::TestCase
   test 'uid should be generated before save' do
     item = Item.new
     item.type = "Cable"
+    item.title = "Some title"
     
     assert_nothing_raised do
       item.save!
@@ -22,6 +23,7 @@ class ItemTest < ActiveSupport::TestCase
   
   test 'type should be present' do
     item = Item.new
+    item.title = "Some title"
     assert_raises ActiveRecord::RecordInvalid do
       item.save!
     end

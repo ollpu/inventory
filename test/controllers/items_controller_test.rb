@@ -22,7 +22,7 @@ class ItemsControllerTest < ActionController::TestCase
     assert_not_nil assigns(:item)
     
     assert_difference 'Item.count' do
-      post :create, item: {type: 'Cable'}
+      post :create, item: {type: 'Cable', title: 'Test title'}
     end
     assert_redirected_to item_path(assigns(:item))
   end
