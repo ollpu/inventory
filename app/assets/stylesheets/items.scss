@@ -34,6 +34,7 @@ div.item_list {
 
 div.items_show {
   width: 50%;
+  display: inline-block;
   h2 {
     margin: 0;
     display: inline-block;
@@ -51,6 +52,12 @@ div.items_show {
   }
 }
 
+@media screen and (max-width: 22cm) {
+  div.items_show {
+    width: 100%;
+  }
+}
+
 form.edit_item {
   input[type="text"] {
     font-size: inherit;
@@ -60,6 +67,9 @@ form.edit_item {
     border: none;
     border-bottom: solid 2px grey;
     margin-bottom: 0.2em;
+    
+    width: 100%;
+    max-width: 16em;
   }
 }
 
