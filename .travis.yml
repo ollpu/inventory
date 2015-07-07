@@ -4,3 +4,5 @@ rvm:
   - 2.0.0 # Current Heroku default (excluding patch)
 script:
   - RAILS_ENV=test bundle exec rake --trace db:migrate; bundle exec rake test
+notifications:
+  email: false
