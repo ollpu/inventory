@@ -23,6 +23,19 @@ class Item < ActiveRecord::Base
     presence: true,
     length: { in: 2..80 }
   
+  serialize :features
+  def features_human
+    if self.features
+      self.features.join(', ')
+    else
+      ""
+    end
+  end
+  
+  def features_human=(input)
+    self.features = input.split(',').grep(String).collect(&:strip)
+  end
+  
   ## List of subclasses and their aliases
     # When adding a new subclass, please maintain both TYPES and TYPES_HASH
     # [name, class],

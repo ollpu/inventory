@@ -15,7 +15,22 @@
       data: { confirm: t('.remove_confirm', title: @item.title) },
       class: 'mat-icns edit' %><br/>
     
-    <span class="item_type core"><%= @item.get_type_name %></span><br/>
+    <span class="item_type core"><%= @item.get_type_name %></span>
+    
+    <span class="field">
+      <%# Print out all of the item's features %>
+      <span class="value">
+        <%# Check that @item.features isn't nil (the and statement) %>
+        <% @item.features and @item.features.each do |feature| %>
+          <% if feature.is_a?(String) %>
+            <span class="item_type feature" data-content="<%= feature %>"
+            ><%= "#{feature[0].capitalize}#{feature[1..-1]}" -%></span>
+          <% end %>
+        <% end %>
+      </span>
+      <%= f.text_field :features_human %>
+    </span>
+    <br/>
     <span class="uid"><%= @item.uid %></span>
     
     <div class="field">

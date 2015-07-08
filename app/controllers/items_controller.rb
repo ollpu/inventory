@@ -8,7 +8,13 @@ class ItemsController < ApplicationController
   end
   
   def show
-    @item = Item.where("uid LIKE ?", "#{params[:uid]}%").first
+    @item = get_by_uid params[:uid]
+  end
+  
+  def update
+    @item = get_by_uid params[:uid]
+    @item.update item_params
+    redirect_to item_path(@item)
   end
   
   def new
@@ -31,7 +37,11 @@ class ItemsController < ApplicationController
   
   private
   def item_params
-    params.require(:item).permit(:type, :title)
+    params.require(:item).permit(:type, :title, :features_human)
+  end
+  
+  def get_by_uid (uid)
+    Item.where("uid LIKE ?", "#{uid}%").first
   end
   
 end
