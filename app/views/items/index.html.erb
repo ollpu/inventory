@@ -11,6 +11,7 @@
     <%= link_to item_path(item) do %>
       <span class="title"><%= item.title %></span>
       <span class="item_type core"><%= item.get_type_name %></span>
+      <%= render 'features', :item => item %>
     <% end -%>
   <% end -%>
   </div>

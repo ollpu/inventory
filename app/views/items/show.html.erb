@@ -20,13 +20,7 @@
     <span class="field">
       <%# Print out all of the item's features %>
       <span class="value">
-        <%# Check that @item.features isn't nil (the and statement) %>
-        <% @item.features and @item.features.each do |feature| %>
-          <% if feature.is_a?(String) %>
-            <span class="item_type feature" data-content="<%= feature %>"
-            ><%= "#{feature[0].capitalize}#{feature[1..-1]}" -%></span>
-          <% end %>
-        <% end %>
+        <%= render 'features', :item => @item %>
       </span>
       <%= f.text_field :features_human %>
     </span>

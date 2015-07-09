@@ -30,7 +30,7 @@ ready = ->
   $('form.edit_item a#edit').click edit_toggle
   
   # Assign a semi-unique hue to every feature-span, based on its text (content)
-  $('div.items_show span.item_type.feature').each (i, el) ->
+  $('span.item_type.feature').each (i, el) ->
     me = $(el)
     content = me.data 'content'
     me.css('background-color', "hsl(#{hue_from_string content}, 59%, 67%)")
