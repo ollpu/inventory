@@ -32,7 +32,7 @@ ready = ->
   # Assign a semi-unique hue to every feature-span, based on its text (content)
   $('span.item_type.feature').each (i, el) ->
     me = $(el)
-    content = me.data 'content'
+    content = me.html()
     me.css('background-color', "hsl(#{hue_from_string content}, 59%, 67%)")
     
 $(document).ready(ready)

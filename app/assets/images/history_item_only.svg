@@ -65,7 +65,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title>History Item Visualizer (Bottom)</dc:title>
+        <dc:title>History Item Visualizer (Only)</dc:title>
         <cc:license
            rdf:resource="https://github.com/ollpu/inventory/blob/master/LICENSE" />
         <dc:creator>
@@ -85,14 +85,6 @@
        style="fill-opacity:1"
        d="M 32 16 C 23.163444 16 16 23.163444 16 32 C 16 40.836556 23.163444 48 32 48 C 40.836556 48 48 40.836556 48 32 C 48 23.163444 40.836556 16 32 16 z M 32 28 C 34.209139 28 36 29.790861 36 32 C 36 34.209139 34.209139 36 32 36 C 29.790861 36 28 34.209139 28 32 C 28 29.790861 29.790861 28 32 28 z "
        id="path3766" />
-    <rect
-       class="color"
-       style="fill-opacity:1"
-       id="rect3768"
-       width="8"
-       height="20"
-       x="28"
-       y="0" />
     <rect
        class="color"
        style="fill-opacity:1;fill-rule:evenodd;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"

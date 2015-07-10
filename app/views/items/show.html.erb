@@ -4,9 +4,9 @@
 <div class="items_show">
   <%= form_for @item.becomes(Item), html: { class: 'edit_item' } do |f| %>
     <h2 class="field">
-      <%# Showed when form is .closed  -%>
+      <%# Shown when form is .closed  -%>
       <span class="value"><%= @item.title %></span>
-      <%# Showed when form is .open  -%>
+      <%# Shown when form is .open  -%>
       <%= f.text_field :title %>
     </h2>
     <%= link_to 'edit', 'javascript:void(0)', class: 'mat-icns edit', id: 'edit' %>
@@ -31,6 +31,42 @@
       <%= f.submit %>
     </div>
   <% end -%>
+</div>
+<div class="items_show logs">
+  <%# The following "logs" are temporary, and will be rendered dyanmically
+      in the future. %>
+  <h2>Kalun historia</h2>
+  <%= link_to logs_path, class: 'log' do %>
+    <div class="log-content">
+      Kalu meni rikki<br/>
+      <span class="log-removed"></span>
+      <span class="log-added">
+        <span class="item_type feature">Rikki</span>
+      </span>
+    </div>
+  <% end %>
+  <%= link_to logs_path, class: 'log' do %>
+    <div class="log-content">
+      Kaaplelin liittimet vaihdettiin 5-pinnisiksi<br/>
+      <span class="log-removed">
+        <span class="item_type feature">3pin</span>
+      </span>
+      <span class="log-added">
+        <span class="item_type feature">5pin</span>
+      </span>
+    </div>
+  <% end %>
+  <%= link_to logs_path, class: 'log' do %>
+    <div class="log-content">
+      Kalu luotiin<br/>
+      <span class="log-removed"></span>
+      <span class="log-added">
+        <span class="item_type feature">DMX</span>
+        <span class="item_type feature">5m</span>
+        <span class="item_type feature">3pin</span>
+      </span>
+    </div>
+  <% end %>
 </div>
 <% else %>
   <%= t '.item_not_found' %>

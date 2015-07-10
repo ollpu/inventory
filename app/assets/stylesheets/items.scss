@@ -9,6 +9,7 @@ span.item_type {
   background-color: #DDD;
   padding: 0 2px;
   border-radius: 4px;
+  color: black;
 }
 
 span.item_type.core { background-color: #7db9e0; }
@@ -33,8 +34,9 @@ div.item_list {
 
 
 div.items_show {
-  width: 50%;
+  width: 49.7%;
   display: inline-block;
+  vertical-align: top;
   h2 {
     margin: 0;
     display: inline-block;
@@ -50,6 +52,54 @@ div.items_show {
     text-decoration: none;
     top: 0.12em;
   }
+}
+
+div.items_show.logs {
+  display: inline-table;
+  h2 {
+    display: table-caption;
+    border-bottom: 1px solid gray;
+  }
+  .log {
+    color: $link_color;
+    text-decoration: none;
+    display: table-row;
+    .log-content {
+      display: table-cell;
+      vertical-align: middle;
+      
+      span.log-removed:not(:empty) { margin-right: 0.6em; }
+      span.log-removed:not(:empty)::before {
+        content: "-";
+        color: red;
+        font-weight: bolder;
+      }
+      span.log-added:not(:empty)::before {
+        content: "+";
+        color: green;
+        font-weight: bolder;
+      }
+    }
+  }
+  .log::before {
+    content: image-url('history_item_middle.svg');
+    fill: #EEE;
+    display: table-cell;
+    width: 64px;
+    height: 64px;
+    line-height: 0;
+    position: relative;
+  }
+  .log:first-of-type::before {
+    content: image-url('history_item_top.svg');
+  }
+  .log:last-of-type::before {
+    content: image-url('history_item_bottom.svg');
+  }
+  .log:only-of-type::before {
+    content: image-url('history_item_only.svg');
+  }
+  
 }
 
 @media screen and (max-width: 22cm) {

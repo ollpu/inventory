@@ -1,7 +1,7 @@
 <%# Check that @item.features isn't nil (the and statement) %>
 <% item.features and item.features.each do |feature| %>
   <% if feature.is_a?(String) %>
-    <span class="item_type feature" data-content="<%= feature %>"
+    <span class="item_type feature"
     ><%= "#{feature[0].capitalize}#{feature[1..-1]}" -%></span>
   <% end %>
 <% end %>
