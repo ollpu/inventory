@@ -72,5 +72,5 @@ class Item < ActiveRecord::Base
       # Expire main trivia (includes Item.count)
       expire_fragment 'main_trivia'
     end
-  
+    def after_destroy; after_create; end
 end
