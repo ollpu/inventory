@@ -11,6 +11,13 @@ class ItemsController < ApplicationController
     @item = get_by_uid params[:uid]
   end
   
+  # Redirects to /items/[:uid]#edit,
+  # editing form is then handled by javascript.
+  def edit
+    @item = get_by_uid params[:uid]
+    redirect_to item_path(@item) << '#edit'
+  end
+  
   def update
     @item = get_by_uid params[:uid]
     @item.update item_params
@@ -24,10 +31,13 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     
-    @item.save!
-    # Use item_path instead of plain @item to force use of item controller
-    # instead of type-specific controller (not implemented (yet))
-    redirect_to item_path(@item)
+    if @item.save
+      # Use item_path instead of plain @item to force use of item controller
+      # instead of type-specific controller (not implemented (yet))
+      redirect_to item_path(@item)
+    else
+      render 'new'
+    end
   end
   
   def destroy
