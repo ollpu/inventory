@@ -36,6 +36,28 @@ class ItemTest < ActiveSupport::TestCase
     end
   end
   
+  test 'features_human function' do
+    item = Item.new
+    item.features = ["This", "is", "a", "list"]
+    assert_equal "This, is, a, list", item.features_human,
+      "features_human did not return expected ', ' delimitered list"
+    
+    item.features = nil
+    assert_equal "", item.features_human,
+      "features_human did not return a string on invalid input"
+  end
+  
+  test 'features_human=' do
+    item = Item.new
+    
+      # The function should strip surrounding whitespace
+    item.features_human = "This,     is   , a,list "
+    
+    assert_equal ["This", "is", "a", "list"], item.features,
+      "features_human= did not generate appropriate Array"
+  end
+  
+  
   test 'get_type_name function' do
     item = Item.new
     item.type = "Device"
@@ -52,5 +74,13 @@ class ItemTest < ActiveSupport::TestCase
     
     assert_equal item.uid, item.to_param, "to_param did not return actual uid"
   end
+  
+  test 'short_uid function' do
+    item = Item.new
+    item.generate_uid
     
+    assert_equal item.uid.split(/\-/).first, item.short_uid,
+      "short_uid returned an unexpected value"
+  end
+  
 end
