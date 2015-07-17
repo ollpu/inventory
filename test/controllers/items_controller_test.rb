@@ -9,21 +9,39 @@ class ItemsControllerTest < ActionController::TestCase
   end
   
   test 'get show' do
-    get :show
+    item = items(:one)
+    get :show, uid: item.uid
+    
     assert_template :show, layout: "items/show"
     assert_response :success
-    assert_not_nil assigns(:item)
+    assert_equal item, assigns(:item),
+      "items#show did not select correct entry from database"
   end
   
   test 'get edit' do
-    get :edit
-    assert_not_nil assigns(:item)
-    assert_redirected_to item_path(assings(:item)) << "#edit"
+    item = items(:one)
+    get :edit, uid: item.uid
+    
+    assert_equal item, assigns(:item),
+      "items#edit did not select correct entry from database"
+    assert_redirected_to item_path(item) << "#edit"
   end
   
   test 'post update' do
-    post :update, item: {title: "Hello", features_human: "This, is, a, list"}
-    assert_not_nil assigns(:item)
+    new_item = {
+      title: "DMX 5m 5pin cable modified",
+      features_human: "DMX, 5m, 5pin, Modified",
+      features: ['DMX', '5m', '5pin', 'Modified']
+    }
+    item = items(:one)
+    post :update,
+      item: new_item,
+      uid: item.uid
+    
+    assert_equal new_item[:title], assigns(:item).title,
+      "items#update did not modify title correctly"
+    assert_equal new_item[:features], assigns(:item).features,
+      "items#update did not modify features correctly"
     assert_redirected_to item_path(assigns(:item))
   end
   

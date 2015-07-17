@@ -1,9 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  uid: MyString
-  type: 
-
-two:
-  uid: MyString
-  type: 
+  uid: 92104069-5d5f-4f39-acc0-30558f373038
+  type: Cable
+  title: DMX 5m 5pin cable
+  features:
+    - DMX
+    - 5m
+    - 5pin
+    
