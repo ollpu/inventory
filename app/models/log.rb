@@ -2,6 +2,8 @@ class Log < ActiveRecord::Base
   serialize :items, :changed
   
   # Validate :items and :changed
+  # TODO: This section was deemed too complicated by CodeClimate,
+  #       simplify it!
   validate do |log|
     if log.items.length == 0
       log.errors[:items] << "Log has to target atleast one item" # Translate!
