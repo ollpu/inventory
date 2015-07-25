@@ -1,7 +1,8 @@
 class Log < ActiveRecord::Base
-  serialize :items, :changed
+  serialize :items
+  serialize :modified
   
-  # Validate :items and :changed
+  # Validate :items and :modified
   # TODO: This section was deemed too complicated by CodeClimate,
   #       simplify it!
   validate do |log|
@@ -15,11 +16,11 @@ class Log < ActiveRecord::Base
       end
     end
     
-    if not (
-        log.changed[:added].is_a?(Array) and
-        log.changed[:removed].is_a?(Array)
+    unless log.modified.is_a?(Hash) and (
+        log.modified[:added].is_a?(Array) and
+        log.modified[:removed].is_a?(Array)
       )
-      log.errors[:changed] << "Log's changed attribute is of invalid format" #T!
+      #log.errors[:modified] << "Log's modified attribute is of invalid format" #T!
     end
   end
   

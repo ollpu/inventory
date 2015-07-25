@@ -7,6 +7,12 @@ class LogsController < ApplicationController
     @log = Log
   end
   
+  def new
+    target = params[:target]
+    # :items => [ target ] or [ ] if "target" isn't supplied
+    @log = Log.new(items: if target.present? then [target] else [] end)
+  end
+  
   def create
   end
 end
