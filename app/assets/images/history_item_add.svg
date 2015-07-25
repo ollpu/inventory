@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="64px"
+   height="64px"
+   id="svg2982"
+   version="1.1"
+   inkscape:version="0.48.5 r10040"
+   sodipodi:docname="history_item_only.svg">
+  <style
+     id="style3">
+    .color {
+      fill: #7aa4ab;
+    }
+  </style>
+  <title
+     id="title3805">History Item Visualizer (Bottom)</title>
+  <defs
+     id="defs2984" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="7.9999996"
+     inkscape:cx="9.9126899"
+     inkscape:cy="27.189232"
+     inkscape:current-layer="g3006"
+     showgrid="true"
+     inkscape:document-units="px"
+     inkscape:grid-bbox="true"
+     showguides="true"
+     inkscape:window-width="1855"
+     inkscape:window-height="1056"
+     inkscape:window-x="65"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid2990"
+       empspacing="4"
+       visible="true"
+       enabled="true"
+       snapvisiblegridlinesonly="true"
+       spacingx="4px"
+       spacingy="4px"
+       dotted="false"
+       originx="0px"
+       originy="0px" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata2987">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>History Item Visualizer (Bottom)</dc:title>
+        <cc:license
+           rdf:resource="https://github.com/ollpu/inventory/blob/master/LICENSE" />
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Roope Salmi</dc:title>
+          </cc:Agent>
+        </dc:creator>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer">
+    <g
+       id="g3006">
+      <g
+         id="g3010">
+        <rect
+           class="color"
+           style="fill:#008000;fill-opacity:1;fill-rule:evenodd;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+           id="rect2987"
+           width="32"
+           height="4"
+           x="16"
+           y="30" />
+        <rect
+           class="color"
+           style="fill:#008000;fill-opacity:1;fill-rule:evenodd;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+           id="rect2987-3"
+           width="32"
+           height="4"
+           x="16"
+           y="-34"
+           transform="matrix(0,1,-1,0,0,0)" />
+      </g>
+    </g>
+  </g>
+</svg>

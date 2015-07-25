@@ -81,16 +81,23 @@ div.items_show.logs {
       }
     }
   }
+  .new-log {
+    .log-content {
+      font-weight: bold;
+    }
+  }
   .log::before {
     content: image-url('history_item_middle.svg');
-    fill: #EEE;
     display: table-cell;
     width: 64px;
     height: 64px;
     line-height: 0;
     position: relative;
   }
-  .log:first-of-type::before {
+  .log:first-of-type::before { // New-log button
+    content: image-url('history_item_add.svg');
+  }
+  .log:nth-of-type(2)::before { // First actual log
     content: image-url('history_item_top.svg');
   }
   .log:last-of-type::before {
