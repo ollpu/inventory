@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   
+  get 'login' => 'sessions#new', as: 'login'
+  get 'logout' => 'sessions#destroy', as: 'logout'
+  
   root 'index#index'
   get 'search' => 'search#results'
   resources :logs, :events, :users

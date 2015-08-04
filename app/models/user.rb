@@ -22,6 +22,22 @@ class User < ActiveRecord::Base
     end
   end
   
+  # Authenicate using email and password. Returns user if successful or nil
+  # if not.
+  def self.authenticate email, password
+    user = find_by_email email
+    if user
+      user if user.authenticate password
+    end
+  end
+  
+  # Authenticate using syntax user.authencticate password if user is
+  # pre-determined. Returns true or false.
+  def authenticate password
+    hash = BCrypt::Engine.hash_secret password, password_salt
+    hash == user.password_hash
+  end
+  
   protected
     def after_create
       # Expire main trivia (includes User.count)
