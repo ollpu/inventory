@@ -4,3 +4,8 @@ fi:
     models:
       log: Loki
       log_all: Lokit
+  log:
+    errors:
+      no_target: "Lokin täytyy vaikuttaa ainakin yhteen kaluun"
+      invalid_uid: "Loki sisältää kelpaamattoman UID-koodin"
+      invalid_modified: "Lokin 'modified'-ominaisuus on väärin formatoitu"

@@ -21,6 +21,6 @@ class SessionsController < ApplicationController
   def destroy
     authorize :sessions
     session[:user_id] = nil
-    # TODO: Redirect somewhere
+    redirect_to login_path
   end
 end

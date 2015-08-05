@@ -14,8 +14,15 @@ class ApplicationController < ActionController::Base
   private
   
   def user_not_authorized
-    flash[:alert] = "Please log in first." # Tranlslate!
-    redirect_to login_path
+    unless current_user
+      # Not logged in
+      flash[:alert] = t(:no_user, scope: :authorization)
+      redirect_to login_path
+    else
+      # Logged in but not otherwise authorized
+      flash[:alert] = t(:not_authorized, scope: :authorization)
+      redirect_to root_path
+    end
   end
   
   def current_user

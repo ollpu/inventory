@@ -1,0 +1,8 @@
+
+fi:
+  sessions:
+    new:
+      inventory_login: "Inventoryyn kirjautuminen"
+      email: "Sähköposti:"
+      password: "Salasana:"
+      log_in: "Kirjaudu"

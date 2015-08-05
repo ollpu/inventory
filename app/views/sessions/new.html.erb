@@ -1,13 +1,13 @@
-<%# Tranlate! %>
-<h1>Inventory</h1>
+
+<h1><%= t('.inventory_login') %></h1>
 <%= form_tag sessions_path, html: { class: 'login' } do %>
-  <%= label_tag :email, "E-mail:" %>
+  <%= label_tag :email, t('.email') %>
   <%= text_field_tag :email, params[:email] %>
   
-  <%= label_tag :password, "Password: " %>
+  <%= label_tag :password, t('.password') %>
   <%= password_field_tag :password, params[:password] %>
   
-  <%= submit_tag "Log in" %>
+  <%= submit_tag t('.log_in') %>
   
   <%= session[:user_id] %>
 <% end %>
