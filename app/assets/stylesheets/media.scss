@@ -3,18 +3,13 @@
 
 @media screen and (max-width: 32cm) {
   // Apply max width instead of static padding
-  div.mass-container, div.footer {
-    margin: 1em auto;
-    max-width: 28cm - 2cm;
+  body {
+    margin: 0 auto;
+    max-width: 28cm - 1.2cm;
   }
 }
 
-@media screen and (max-width: 28cm) {
-  // Small static margin
-  div.mass-container, div.footer {
-    margin: 1em 1em;
-  }
-}
+
 
 @media screen and (max-width: 14cm) {
   // Collapse navigation items & search bar into a menu (closed by default)
@@ -51,6 +46,12 @@
       display: block !important;
       
     }
+  }
+}
+
+@media screen and (max-width: 12cm) {
+  body.clear {
+    margin-top: 1em;
   }
 }
 

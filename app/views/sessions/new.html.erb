@@ -1,14 +1,12 @@
 
-<h1><%= t('.inventory_login') %></h1>
-<%= form_tag sessions_path, html: { class: 'login' } do %>
+<h1 class="login"><%= t('.inventory_login') %></h1>
+<%= form_tag sessions_path, class: 'login' do %>
   <%= label_tag :email, t('.email') %>
-  <%= text_field_tag :email, params[:email] %>
+  <%= email_field_tag :email, params[:email], autofocus: true %>
   
   <%= label_tag :password, t('.password') %>
   <%= password_field_tag :password, params[:password] %>
   
   <%= submit_tag t('.log_in') %>
-  
-  <%= session[:user_id] %>
 <% end %>
  

@@ -10,7 +10,7 @@
     google: ['Noto Sans', 'Lato', 'Material Icons']
   }) %>
 </head>
-<body>
+<body class="<%= "clear" if @clear_template %>">
 
 <% unless @clear_template %>
   <div class="mass-container header">
@@ -22,14 +22,14 @@
   </div>
 <% end %>
 
-<div class="mass-container content <%= "clear" if @clear_template %>">
+<div class="mass-container content">
   <% flash.each do |name, msg| -%>
     <%= content_tag :div, msg, class: name %>
   <% end -%>
   <%= yield %>
 </div>
 
-<div class="footer <%= "clear" if @clear_template %>">
+<div class="footer">
   © Roope Salmi 2015
   - <%= link_to t('.source_code'), 'https://github.com/ollpu/inventory/' %>
 </div>

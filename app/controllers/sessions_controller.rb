@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
   def new
     authorize :sessions
+    redirect_to root_path unless current_user # User already logged in
     @clear_template = true
   end
   
@@ -13,6 +14,7 @@ class SessionsController < ApplicationController
       redirect_to root_path
     else
       # Login unsuccessful
+      @clear_template = true
       render :new
       # TODO: Notify user of unsuccessful login
     end
