@@ -1,0 +1,14 @@
+<%# Tranlate! %>
+<h1>Inventory</h1>
+<%= form_tag sessions_path, html: { class: 'login' } do %>
+  <%= label_tag :email, "E-mail:" %>
+  <%= text_field_tag :email, params[:email] %>
+  
+  <%= label_tag :password, "Password: " %>
+  <%= password_field_tag :password, params[:password] %>
+  
+  <%= submit_tag "Log in" %>
+  
+  <%= session[:user_id] %>
+<% end %>
+ 

@@ -14,6 +14,9 @@ class User < ActiveRecord::Base
     presence: true,
     format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create },
     uniqueness: { case_sensitive: false }
+  validates :privileges,
+    presence: true,
+    inclusion: { in: 0..2 }
   
   def encypt_password
     if password.present?
@@ -35,8 +38,14 @@ class User < ActiveRecord::Base
   # pre-determined. Returns true or false.
   def authenticate password
     hash = BCrypt::Engine.hash_secret password, password_salt
-    hash == user.password_hash
+    hash == password_hash
   end
+  
+  
+  # Permission levels
+  def viewer?; privileges >= 0; end # Is atleast viewer
+  def editor?; privileges >= 1; end # Is atleast editor
+  def admin?;  privileges >= 2; end # Is atleast admin
   
   protected
     def after_create

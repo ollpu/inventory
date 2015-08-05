@@ -12,19 +12,24 @@
 </head>
 <body>
 
-<div class="mass-container header">
-  <h1>
-    <%= t '.inventory_of', peer: t('.peer') %>
-    <%= render 'trivia' %>
-  </h1>
-  <%= render 'layouts/nav' %>
-</div>
+<% unless @clear_template %>
+  <div class="mass-container header">
+    <h1>
+      <%= t '.inventory_of', peer: t('.peer') %>
+      <%= render 'trivia' %>
+    </h1>
+    <%= render 'layouts/nav' %>
+  </div>
+<% end %>
 
-<div class="mass-container content">
+<div class="mass-container content <%= "clear" if @clear_template %>">
+  <% flash.each do |name, msg| -%>
+    <%= content_tag :div, msg, class: name %>
+  <% end -%>
   <%= yield %>
 </div>
 
-<div class="footer">
+<div class="footer <%= "clear" if @clear_template %>">
   © Roope Salmi 2015
   - <%= link_to t('.source_code'), 'https://github.com/ollpu/inventory/' %>
 </div>

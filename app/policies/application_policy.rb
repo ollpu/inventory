@@ -7,15 +7,16 @@ class ApplicationPolicy
   end
 
   def index?
-    false
+    user
   end
 
   def show?
-    scope.where(:id => record.id).exists?
+    user and user.viewer? and
+      scope.where(:id => record.id).exists?
   end
 
   def create?
-    false
+    user and user.editor?
   end
 
   def new?
@@ -23,7 +24,7 @@ class ApplicationPolicy
   end
 
   def update?
-    false
+    user and user.editor?
   end
 
   def edit?
@@ -31,7 +32,7 @@ class ApplicationPolicy
   end
 
   def destroy?
-    false
+    user and user.editor?
   end
 
   def scope

@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   
   get 'login' => 'sessions#new', as: 'login'
   get 'logout' => 'sessions#destroy', as: 'logout'
+  post 'authenticate' => 'sessions#create', as: 'sessions'
   
   root 'index#index'
   get 'search' => 'search#results'

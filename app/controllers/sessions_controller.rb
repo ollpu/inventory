@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
   def new
     authorize :sessions
+    @clear_template = true
   end
   
   def create
@@ -9,7 +10,7 @@ class SessionsController < ApplicationController
     if user
       # Login successful
       session[:user_id] = user.id
-      # TODO: Redirect here
+      redirect_to root_path
     else
       # Login unsuccessful
       render :new

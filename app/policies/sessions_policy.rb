@@ -1,6 +1,7 @@
 class SessionsPolicy < ApplicationPolicy
-  def new?
-    true # All viewers are permitted to view the login prompt
+  def create?
+    # All viewers are permitted to view the login prompt and attempt to log in
+    true
   end
   
   def destroy?
