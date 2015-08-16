@@ -24,6 +24,20 @@ class Log < ActiveRecord::Base
     end
   end
   
+  # Custom reader for items_human
+  def items_human
+    if self.items
+      self.items.join(', ')
+    else
+      ""
+    end
+  end
+  
+  # Custom writer for items_human
+  def items_human=(input)
+    self.items = input.split(',').grep(String).collect(&:strip)
+  end
+  
   # Applies the changes described in this log on the items it affects
   def apply
     # TODO

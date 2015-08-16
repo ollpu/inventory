@@ -35,11 +35,11 @@
 <div class="items_show logs">
   <%# The following "logs" are temporary, and will be rendered dyanmically
       in the future. %>
-  <h2>Kalun historia</h2>
+  <h2><%= t '.items_history' %></h2>
   <%# Create new log -button %>
   <%= link_to new_log_path(target: @item), class: 'log new-log' do %>
     <div class="log-content">
-      Luo uusi loki
+      <%= t '.new_log' %>
     </div>
   <% end %>
   <%= link_to logs_path, class: 'log' do %>

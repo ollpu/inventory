@@ -9,3 +9,5 @@ en:
       title: New item
     show:
       remove_confirm: "Are you sure you want to remove item \"%{title}\"?"
+      items_history: "Item's history"
+      new_log: "Create new log"

@@ -1,0 +1,11 @@
+<h2><%= t '.new_log' %></h2>
+
+<%= form_for @log, html: { class: 'new-log' } do |f| %>
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+  
+  <%= f.label :items %>
+  <%= f.text_field :items_human %>
+  Päivää!!!!Pk
+  <%= f.submit %>
+<% end %>

@@ -9,3 +9,5 @@ fi:
       title: Uusi kalu
     show:
       remove_confirm: "Oletko varma että haluat poistaa kalun \"%{title}\"?"
+      items_history: "Kalun historia"
+      new_log: "Luo uusi loki"
