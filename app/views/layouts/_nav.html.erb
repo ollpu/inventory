@@ -7,18 +7,44 @@
   <td class="items">
     <% _scope = [:activerecord, :models] %>
     
-    <%= link_to t(:item_all, scope: _scope), 'javascript:void(0);' %>
-    <ul>
-      <li><%= link_to t('.all'), items_path %></li>
-      <hr />
-      <li><%= link_to t(:cable_all, scope: _scope), items_path(:type => "Cable") %></li>
-      <li><%= link_to t(:device_all, scope: _scope), items_path(:type => "Device") %></li>
-      <li><%= link_to t(:misc_all, scope: _scope), items_path(:type => "Misc") %></li>
-      <hr />
-      <li><%= link_to t('.new'), new_item_path %></li>
-    </ul>
+    <%# Navigation links schema:
+        <span class="dropdown"> <-- Dropdown menu container
+          <a></a>               <-- Title
+          <ul>                  <-- Dropdown container
+            <a></a>             <-- Dropdown option
+            <hr>                <-- Separator line (optional)
+            <a></a>             <-- Another dropdown option
+          </ul>
+        </span>
+        <a></a>                 <-- Non-dropdown link
+    %>
+    
+    <span class="dropdown"> <!-- Items menu -->
+      <%= link_to t(:item_all, scope: _scope), 'javascript:void(0);' %>
+      <ul>
+        <li><%= link_to t('.all'), items_path %></li>
+        <hr />
+        <li><%= link_to t(:cable_all, scope: _scope), items_path(:type => "Cable") %></li>
+        <li><%= link_to t(:device_all, scope: _scope), items_path(:type => "Device") %></li>
+        <li><%= link_to t(:misc_all, scope: _scope), items_path(:type => "Misc") %></li>
+        <hr />
+        <li><%= link_to t('.new'), new_item_path %></li>
+      </ul>
+    </span>
+    
     <%= link_to t(:event_all, scope: _scope), events_path %>
-    <%= link_to t(:user, scope: _scope), users_path %>
+    
+    <span class="dropdown"> <!-- User(s) menu -->
+      <%= link_to t(:user, scope: _scope), users_path %>
+      <ul>
+        <li><%= link_to t('.my_account'), user_path(current_user) %></li>
+        <li><%= link_to t('.logout'), logout_path %></li>
+        <% if current_user.admin? %> <%# Admin only %>
+          <hr />
+          <li><%= link_to t('.manage_users'), users_path %>
+        <% end %>
+      </ul>
+    </span>
   </td>
   
   <td class="search">

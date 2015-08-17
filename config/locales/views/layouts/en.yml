@@ -10,4 +10,10 @@ en:
     nav:
       all: All
       new: New
+      
+      my_account: My account
+      logout: Log out
+      manage_users: Manage users
+      
       search_anything: "Search anything..."
+      

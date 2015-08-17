@@ -4,3 +4,4 @@ fi:
   authorization:
     no_user: "Sinun on ensin kirjauduttava sisään."
     not_authorized: "Sinulla ei ole oikeutta tehdä noin."
+    invalid_credentials: "Sähköposti tai salasana on väärä."

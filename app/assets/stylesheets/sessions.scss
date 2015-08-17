@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$content_font: 'Noto Sans';
+@import "shared/variables";
 
 
 h1.login {
@@ -38,7 +38,8 @@ form.login {
   
   input[type="submit"]:hover {
     background: #EFEFEF;
-    box-shadow: 0 1px 3px #DDD;
+    box-shadow: 0 1px
+     3px #DDD;
   }
   
   input[type="submit"]:focus {

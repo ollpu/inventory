@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
   def user_not_authorized
     unless current_user
       # Not logged in
-      flash[:alert] = t(:no_user, scope: :authorization)
+      flash[:notice] = t(:no_user, scope: :authorization)
       redirect_to login_path
     else
       # Logged in but not otherwise authorized

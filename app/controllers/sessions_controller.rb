@@ -12,11 +12,12 @@ class SessionsController < ApplicationController
       # Login successful
       session[:user_id] = user.id
       redirect_to root_path
+      flash.clear;
     else
       # Login unsuccessful
       @clear_template = true
+      flash[:alert] = I18n.t(:invalid_credentials, scope: :authorization)
       render :new
-      # TODO: Notify user of unsuccessful login
     end
   end
   

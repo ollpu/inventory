@@ -10,5 +10,10 @@ fi:
     nav:
       all: Kaikki
       new: Uusi
+      
+      my_account: Tilini
+      logout: Kirjaudu ulos
+      manage_users: Hallitse käyttäjiä
+      
       search_anything: "Hae mitä tahansa..."
       
