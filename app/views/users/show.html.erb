@@ -1,0 +1,18 @@
+<h2><%= t '.account_management' %></h2>
+
+<%= form_for @user do |f| %>
+  <div class="section">
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+  </div>
+  
+  <div class="section">
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+  
+  <div class="section">
+    <span class="empty"></span>
+    <%= f.submit %>
+  </div>
+<% end %>

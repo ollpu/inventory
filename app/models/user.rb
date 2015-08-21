@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
     on: :new
   validates :password,
     presence: true,
-    confirmation: { :on => :create },
+    confirmation: true,
     on: :new
   validates :email,
     presence: true,

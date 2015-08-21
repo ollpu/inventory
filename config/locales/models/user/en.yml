@@ -4,3 +4,7 @@ en:
     models:
       user: User
       user_all: Users
+    attributes:
+      user:
+        email: "E-mail:"
+        password: "Password:"

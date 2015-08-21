@@ -1,7 +1,15 @@
+<%
+  page_title = t('.title')
+  # @title can be modified from controller or view (@title=)
+  if @title.present?
+    page_title << " - #{@title}"
+  end
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= t '.title' %></title>
+  <title><%= page_title %></title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>

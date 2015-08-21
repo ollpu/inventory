@@ -4,3 +4,7 @@ fi:
     models:
       user: Käyttäjä
       user_all: Käyttäjät
+    attributes:
+      user:
+        email: "Sähköposti:"
+        password: "Salasana:"
