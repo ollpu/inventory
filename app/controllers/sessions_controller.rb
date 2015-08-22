@@ -2,7 +2,6 @@ class SessionsController < ApplicationController
   def new
     authorize :sessions
     redirect_to root_path if current_user # User already logged in
-    @clear_template = true
   end
   
   def create

@@ -1,4 +1,7 @@
-<% @title = t('.title') %>
+<%
+  @title = t('.title')
+  @clear_template = true
+%>
 
 <h1 class="login"><%= t('.inventory_login') %></h1>
 <%= form_tag sessions_path, class: 'login' do %>
