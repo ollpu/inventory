@@ -37,15 +37,9 @@ class Item < ActiveRecord::Base
   end
   
   ## List of subclasses and their aliases
-    # When adding a new subclass, please maintain both TYPES and TYPES_HASH
-    # [name, class],
-    TYPES = [
-      [I18n.t(:cable, scope: [:activerecord, :models]), 'Cable'],
-      [I18n.t(:device, scope: [:activerecord, :models]), 'Device'],
-      [I18n.t(:misc, scope: [:activerecord, :models]), 'Misc'],
-    ]
+    # When adding a new subclass, please maintain TYPES
     # class => name,
-    TYPES_HASH = {
+    TYPES = {
       'Cable' => I18n.t(:cable, scope: [:activerecord, :models]),
       'Device' => I18n.t(:device, scope: [:activerecord, :models]),
       'Misc' => I18n.t(:misc, scope: [:activerecord, :models]),
