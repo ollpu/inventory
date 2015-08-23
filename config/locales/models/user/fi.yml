@@ -6,5 +6,9 @@ fi:
       user_all: Käyttäjät
     attributes:
       user:
-        email: "Sähköposti:"
-        password: "Salasana:"
+        email: "Sähköposti"
+        password: "Salasana"
+        old_password: "Edellinen salasana"
+        password_confirmation: "Vahvista salasana"
+  errors:
+    old_password_no_match: "ei vastaa olemassaolevaa salasanaa"

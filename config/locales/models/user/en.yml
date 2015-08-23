@@ -6,5 +6,9 @@ en:
       user_all: Users
     attributes:
       user:
-        email: "E-mail:"
-        password: "Password:"
+        email: "E-mail"
+        password: "Password"
+        old_password: "Previous password"
+        password_confirmation: "Confirm password"
+  errors:
+    old_password_no_match: "does not match existing password"

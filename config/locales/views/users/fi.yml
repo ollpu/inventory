@@ -3,3 +3,4 @@ fi:
   users:
     show:
       account_management: Tilin hallinta
+      modification_success: "Tilin muokkaus onnistui!"

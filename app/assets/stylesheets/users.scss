@@ -6,7 +6,7 @@ form.edit_user {
   display: table;
   .section {
     display: table-row;
-    label, input, select, span.empty {
+    label, input, select, span, div {
       display: table-cell;
     }
     select {
@@ -16,4 +16,9 @@ form.edit_user {
       padding-right: 0.6em;
     }
   }
+}
+
+div.model-errors {
+  color: red;
+  padding-bottom: 0.6em;
 }
