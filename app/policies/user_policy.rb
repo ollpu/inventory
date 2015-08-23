@@ -1,5 +1,10 @@
 
 class UserPolicy < ApplicationPolicy
+  def index
+    # Only admins can view the users listing
+    user and user.admin?
+  end
+  
   def create?
     # Only admins can create new users
     user and user.admin?

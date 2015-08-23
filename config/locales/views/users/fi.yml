@@ -4,3 +4,10 @@ fi:
     show:
       account_management: Tilin hallinta
       modification_success: "Tilin muokkaus onnistui!"
+    index:
+      title: "Käyttäjien hallinta"
+      new_user: "Luo uusi käyttäjä"
+      actions: "Toiminnot"
+      edit: "Muokkaa"
+      remove: "Poista"
+      remove_confirm: "Oletko aivan varma että haluat poistaa käyttäjän %{email}?"

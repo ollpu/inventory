@@ -7,9 +7,14 @@ fi:
     attributes:
       user:
         email: "Sähköposti"
+        full_name: "Koko nimi"
         password: "Salasana"
         old_password: "Edellinen salasana"
         password_confirmation: "Vahvista salasana"
         privileges: "Oikeudet"
   errors:
     old_password_no_match: "ei vastaa olemassaolevaa salasanaa"
+  permission_levels:
+    viewer: Katselija
+    editor: Muokkaaja
+    admin: Valvoja

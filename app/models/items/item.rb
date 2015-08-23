@@ -46,7 +46,7 @@ class Item < ActiveRecord::Base
     }
     
     def get_type_name
-      TYPES_HASH[self.type]
+      TYPES[self.type]
     end
   ##
   

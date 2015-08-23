@@ -77,11 +77,11 @@ class User < ActiveRecord::Base
   def editor?; privileges >= 1; end # Is atleast editor
   def admin?;  privileges >= 2; end # Is atleast admin
   
-  PERMISSION_LEVELS = [
-    ['Viewer', 0],
-    ['Editor', 1],
-    ['Admin',  2],
-  ]
+  PERMISSION_LEVELS = {
+    0 => I18n.t(:viewer, scope: [:permission_levels]),
+    1 => I18n.t(:editor, scope: [:permission_levels]),
+    2 => I18n.t(:admin, scope: [:permission_levels]),
+  }
   
   protected
     def after_create

@@ -4,3 +4,5 @@ en:
     show:
       account_management: Account Management
       modification_success: "Account was successfully modified!"
+    index:
+      title: "Manage users"

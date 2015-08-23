@@ -1,4 +1,9 @@
 class UsersController < ApplicationController
+  def index
+    authorize Item.new
+    @users = User.all
+  end
+  
   def new
     @user = User.new
     authorize @user

@@ -18,7 +18,7 @@
   
   <div class="section">
     <%= f.label :privileges %>
-    <%= f.select :privileges, options_for_select(User::PERMISSION_LEVELS,
+    <%= f.select :privileges, options_for_select(User::PERMISSION_LEVELS.invert,
         @user.privileges),
       {},
       disabled: (not admin_rights)
