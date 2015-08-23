@@ -35,7 +35,7 @@
     <%= link_to t(:event_all, scope: _scope), events_path %>
     
     <span class="dropdown"> <!-- User(s) menu -->
-      <%= link_to t(:user, scope: _scope), users_path %>
+      <%= link_to t(:user, scope: _scope), 'javascript:void(0);' %>
       <ul>
         <li><%= link_to t('.my_account'), user_path(current_user) %></li>
         <li><%= link_to t('.logout'), logout_path %></li>
