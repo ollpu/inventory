@@ -77,6 +77,12 @@ class User < ActiveRecord::Base
   def editor?; privileges >= 1; end # Is atleast editor
   def admin?;  privileges >= 2; end # Is atleast admin
   
+  PERMISSION_LEVELS = [
+    ['Viewer', 0],
+    ['Editor', 1],
+    ['Admin',  2],
+  ]
+  
   protected
     def after_create
       # Expire main trivia (includes User.count)

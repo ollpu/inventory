@@ -40,7 +40,8 @@ class UsersController < ApplicationController
         :old_password)
     else
       # User is an admin (and not modifying self)
-      params.require(:user).permit(:email, :password_admin, :password_confirmation)
+      params.require(:user).permit(:email, :privileges, :password_admin,
+        :password_confirmation)
     end
   end
   

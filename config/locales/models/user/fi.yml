@@ -10,5 +10,6 @@ fi:
         password: "Salasana"
         old_password: "Edellinen salasana"
         password_confirmation: "Vahvista salasana"
+        privileges: "Oikeudet"
   errors:
     old_password_no_match: "ei vastaa olemassaolevaa salasanaa"

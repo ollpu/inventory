@@ -10,5 +10,6 @@ en:
         password: "Password"
         old_password: "Previous password"
         password_confirmation: "Confirm password"
+        privileges: "Privileges"
   errors:
     old_password_no_match: "does not match existing password"

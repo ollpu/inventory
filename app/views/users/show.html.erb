@@ -7,6 +7,8 @@
 </div>
 
 <%= form_for @user do |f| %>
+  <% admin_rights = current_user.admin? && current_user != @user %>
+
   <div class="section">
     <%= f.label :email %>
     <%= f.email_field :email %>
@@ -14,7 +16,18 @@
   
   <br>
   
-  <% unless current_user.admin? and not current_user == @user %>
+  <div class="section">
+    <%= f.label :privileges %>
+    <%= f.select :privileges, options_for_select(User::PERMISSION_LEVELS,
+        @user.privileges),
+      {},
+      disabled: (not admin_rights)
+    %>
+  </div>
+  
+  <br>
+  
+  <% unless admin_rights %>
     <div class="section">
       <%= f.label :old_password %>
       <%= f.password_field :old_password %>
