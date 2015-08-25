@@ -1,6 +1,7 @@
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
+require 'yaml'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -19,6 +20,7 @@ module Inventory
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+    
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
@@ -31,5 +33,17 @@ module Inventory
     
     # Default locale
     config.i18n.default_locale = :fi
+    
+    
+    # Mailer configuration
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings = {
+      address:              'smtp.gmail.com',
+      port:                 587,
+      domain:               'example.com',
+      user_name:            INVENTORY_CONFIG.mailer.user_name,
+      password:             INVENTORY_CONFIG.mailer.password,
+      authentication:       'plain',
+      enable_starttls_auto: true  }
   end
 end

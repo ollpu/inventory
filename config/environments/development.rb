@@ -38,4 +38,6 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+  
+  INVENTORY_CONFIG = YAML.load(ERB.new(File.read("#{Rails.root}/config/environments/developement.yml")).result)[Rails.env]
 end

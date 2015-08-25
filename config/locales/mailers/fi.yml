@@ -1,0 +1,5 @@
+
+fi:
+  user_mailer:
+    send_password_token:
+      subject: "Inventory-salasanasi"

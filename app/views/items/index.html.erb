@@ -1,6 +1,6 @@
 <h1>
   <% if params[:type].present? %>
-    <%= t '.list_items_by_type', type: Item::TYPES_HASH[params[:type]] %>
+    <%= t '.list_items_by_type', type: Item::TYPES[params[:type]] %>
   <% else %>
     <%= t '.list_all_items' %>
   <% end %>
