@@ -4,6 +4,11 @@ en:
     models:
       log: Log
       log_all: Logs
+    attributes:
+      log:
+        description: Description
+        items: Affected items
+        
   log:
     errors:
       no_target: "Log has to target atleast one item"

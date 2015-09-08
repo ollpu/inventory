@@ -61,6 +61,10 @@ class Item < ActiveRecord::Base
     self.uid.split(/\-/).first
   end
   
+  def self.find_by_uid (uid)
+    Item.where("uid LIKE ?", "#{uid}%").first
+  end
+  
   protected
     def after_create
       # Expire main trivia (includes Item.count)

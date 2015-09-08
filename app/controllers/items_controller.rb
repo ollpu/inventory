@@ -9,20 +9,20 @@ class ItemsController < ApplicationController
   end
   
   def show
-    @item = get_by_uid params[:uid]
+    @item = Item.find_by_uid params[:uid]
     authorize @item.becomes(Item)
   end
   
   # Redirects to /items/[:uid]#edit,
   # editing form is then handled by javascript.
   def edit
-    @item = get_by_uid params[:uid]
+    @item = Item.find_by_uid params[:uid]
     authorize @item.becomes(Item)
     redirect_to item_path(@item) << '#edit'
   end
   
   def update
-    @item = get_by_uid params[:uid]
+    @item = Item.find_by_uid params[:uid]
     authorize @item
     @item.update item_params
     redirect_to item_path(@item)
@@ -56,8 +56,6 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:type, :title, :features_human)
   end
   
-  def get_by_uid (uid)
-    Item.where("uid LIKE ?", "#{uid}%").first
-  end
+  
   
 end

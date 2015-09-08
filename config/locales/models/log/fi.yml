@@ -4,6 +4,10 @@ fi:
     models:
       log: Loki
       log_all: Lokit
+    attributes:
+      log:
+        description: Selitys
+        items: Vaikutetut kalut
   log:
     errors:
       no_target: "Lokin täytyy vaikuttaa ainakin yhteen kaluun"

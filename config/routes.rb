@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   
   root 'index#index'
   get 'search' => 'search#results'
+  
+  get 'logs/add_affected_item' => 'logs#add_affected_item'
+  
   resources :logs, :events, :users
   resources :items, param: :uid
 
