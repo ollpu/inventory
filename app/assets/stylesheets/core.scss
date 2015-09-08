@@ -129,9 +129,8 @@ div.footer { // Bottom display. Not .mass-container
   font-family: $content_font;
   margin: 1em 0;
   padding: 0.2em 0.4em;
-}
-
-a {
-  text-decoration: none;
-  color: $link_color;
+  a {
+    text-decoration: none;
+    color: $link_color;
+  }
 }

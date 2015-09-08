@@ -39,5 +39,16 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
   
-  INVENTORY_CONFIG = YAML.load(ERB.new(File.read("#{Rails.root}/config/environments/developement.yml")).result)[Rails.env]
+  INVENTORY_CONFIG = YAML.load(File.read("#{Rails.root}/config/environments/developement.yml"))
+  
+  # Mailer configuration
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:              'smtp.gmail.com',
+    port:                 587,
+    domain:               'example.com',
+    user_name:            INVENTORY_CONFIG[:mailer_user_name],
+    password:             INVENTORY_CONFIG[:mailer_password],
+    authentication:       'plain',
+    enable_starttls_auto: true  }
 end

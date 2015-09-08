@@ -3,3 +3,7 @@ fi:
   user_mailer:
     send_password_token:
       subject: "Inventory-salasanasi"
+      
+      your_password: "Salasanasi Inventoryyn"
+      admin_sent: "Valvoja on lähettänyt sinulle salasanasetuslinkin."
+      set_new_password: "Voit asettaa uuden salasanasi täällä:"

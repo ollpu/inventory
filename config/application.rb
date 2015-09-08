@@ -35,15 +35,5 @@ module Inventory
     config.i18n.default_locale = :fi
     
     
-    # Mailer configuration
-    config.action_mailer.delivery_method = :smtp
-    config.action_mailer.smtp_settings = {
-      address:              'smtp.gmail.com',
-      port:                 587,
-      domain:               'example.com',
-      user_name:            INVENTORY_CONFIG.mailer.user_name,
-      password:             INVENTORY_CONFIG.mailer.password,
-      authentication:       'plain',
-      enable_starttls_auto: true  }
   end
 end
