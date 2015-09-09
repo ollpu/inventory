@@ -1,6 +1,6 @@
 
 class UserPolicy < ApplicationPolicy
-  def index
+  def index?
     # Only admins can view the users listing
     user and user.admin?
   end

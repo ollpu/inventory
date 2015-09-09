@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def index
-    authorize Item.new
+    authorize :user
     @users = User.all
   end
   
