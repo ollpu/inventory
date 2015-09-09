@@ -10,12 +10,7 @@
   <div class="section">
     <%= f.label :items %>
     <%= render 'affected_items', items: @log.items %>
-    
-    <%= f.label :add_by_uid, t('.add_by_uid') %>
-    <%= text_field_tag nil, '', id: 'add-item-by-uid-field' %>
-    <%= button_tag t('.add'), type: 'button', id: 'add-item-by-uid-button' %>
-    <span class="error add-item-error-container" style="display:none">
-      <%= t('.add_item_not_found') %>
-    </span>
   </div>
+  
+  <%= f.submit %>
 <% end %>

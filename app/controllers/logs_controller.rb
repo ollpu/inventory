@@ -14,18 +14,7 @@ class LogsController < ApplicationController
     authorize @log
   end
   
-  # AJAX for affected items list
-  def add_affected_item
-    log = Log.new
-    authorize log
-    
-    @item = Item.find_by_uid params[:uid]
-    if params[:uid].present? and @item
-      render action: 'add_affected_item', layout: false
-    else
-      render nothing: true
-    end
-  end
+  
   
   def create
   end

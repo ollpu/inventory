@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
     unless current_user
       # Not logged in
       flash[:notice] = t(:no_user, scope: :authorization)
-      redirect_to login_path
+      redirect_to login_path(navigate: request.env['PATH_INFO'])
     else
       # Logged in but not otherwise authorized
       flash[:alert] = t(:not_authorized, scope: :authorization)

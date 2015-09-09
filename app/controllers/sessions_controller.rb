@@ -10,7 +10,11 @@ class SessionsController < ApplicationController
     if user
       # Login successful
       session[:user_id] = user.id
-      redirect_to root_path
+      unless params[:navigate]
+        redirect_to root_path
+      else
+        redirect_to params[:navigate]
+      end
       flash.clear;
     else
       # Login unsuccessful

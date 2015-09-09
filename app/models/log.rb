@@ -29,4 +29,5 @@ class Log < ActiveRecord::Base
   def apply
     # TODO
   end
+  
 end

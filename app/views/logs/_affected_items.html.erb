@@ -4,11 +4,7 @@
   <% items and items.each do |uid| %>
     <% item = Item.find_by_uid uid %>
     <% if item %>
-      <div class="item-minidisplay">
-        <span class="title"><%= link_to item.title, item_path(item) %></span>
-        <span class="features"><%= render 'items/features', item: item %></span>
-        <span class="uid"><%= item.uid %></span>
-      </div>
+      <%= render 'affected_item', item: item %>
     <% end %>
   <% end %>
   <span class="affects-nothing"><%= t '.empty' if items.empty? %></span>
