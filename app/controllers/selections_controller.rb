@@ -3,33 +3,51 @@ class SelectionsController < ApplicationController
   def select_single
     authorize :selections
     @item = Item.find_by_uid params[:uid]
-    generate_array
+    generate_set
     session[:selection] << @item.uid
+    
+    render json: { ok: true }
   end
   
   def deselect_single
     authorize :selections
-    session[:selection].delete params[:uid]
+    @item = Item.find_by_uid params[:uid]
+    generate_set
+    session[:selection].delete @item.uid
+    
+    render json: { ok: true }
   end
   
   def select_array
     authorize :selections
+    generate_set
     session[:selection].merge params[:uids]
+    
+    render json: { ok: true }
   end
   
   def deselect_array
     authorize :selections
+    generate_set
     session[:selection].subtract params[:uids]
+    
+    render json: { ok: true }
   end
   
   def clear
     authorize :selections
+    generate_set
     session[:selection].clear
+    
+    render json: { ok: true }
   end
   
   private
-  def generate_array
-    unless session[:selection].typeof Array
+  def generate_set
+    if session[:selection] and session[:selection].is_a? Array
+      # Convert array into a Set
+      session[:selection] = Set.new(session[:selection])
+    else
       session[:selection] = Set.new
     end
   end

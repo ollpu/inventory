@@ -11,6 +11,14 @@ Rails.application.routes.draw do
   
   resources :logs, :events, :users
   resources :items, param: :uid
+  
+  scope '/selection' do
+    match 'select_single' => 'selections#select_single', via: [:get, :post]
+    match 'deselect_single' => 'selections#deselect_single', via: [:get, :post]
+    match 'select_array' => 'selections#select_array', via: [:get, :post]
+    match 'deselect_array' => 'selections#deselect_array', via: [:get, :post]
+    get 'clear' => 'selections#clear'
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
