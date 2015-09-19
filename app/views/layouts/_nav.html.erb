@@ -1,10 +1,10 @@
 <%# Navigation partial -%>
 
-<table class="nav">
-  <td class="home"><%= link_to 'home', root_url, :class => 'mat-icns' %></td>
-  <td class="mat-icns menu-btn"><a href="javascript:void(0);">menu</a></td>
+<div class="nav" id="navigation">
+  <div class="home"><%= link_to 'home', root_url, :class => 'mat-icns' %></div>
+  <div class="mat-icns menu-btn"><a href="">menu</a></div>
   
-  <td class="items">
+  <div class="items">
     <% _scope = [:activerecord, :models] %>
     
     <%# Navigation links schema:
@@ -45,13 +45,13 @@
         <% end %>
       </ul>
     </span>
-  </td>
+  </div>
   
-  <td class="search">
+  <div class="search">
     <%= form_tag search_path, :class => 'search', :method => 'GET', :enforce_utf8 => false do %>
       <%= text_field_tag :q, "", placeholder: t('.search_anything'), required: true %>
       <%= submit_tag 'search', class: 'mat-icns', name: '' %>
     <% end %>
-  </td>
+  </div>
   
-</table>
+</div>

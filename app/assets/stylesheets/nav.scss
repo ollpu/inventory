@@ -2,24 +2,35 @@
 
 @import "shared/variables";
 
-table.nav { // Navigation table
+div.nav { // Navigation table
   width: 100%;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
   
-  td.home, td.menu-btn { // Home & Menu button containers
+  div {
+    align-self: middle;
+  }
+  
+  div.home, div.menu-btn { // Home & Menu button containers
     width: 28px;
     padding-left: 0.2em;
+    
     a { // Anchor inside
       text-decoration: none;
       color: #444;
     }
   }
-  td.menu-btn { // Menu button container
+  div.menu-btn { // Menu button container
     display: none;
     text-align: right;
     padding-left: 0;
+    flex-grow: 1;
   }
-  td.items { // Navigation links container
+  div.items { // Navigation links container
     padding-left: 0.4em;
+    flex-grow: 1;
+    
     a {
       font-family: "Lato";
       padding: 0 0.5em;
