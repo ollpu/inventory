@@ -16,4 +16,13 @@ en:
       manage_users: Manage users
       
       search_anything: "Search anything..."
+    lyli:
+      shorten_with_lyli: Shorten URL with Lyli
+      explanation: "Create a short link to this page using the Lyli-service"
+      name_title: "lyli.fi/"
+      name_placeholder: "chosen automatically"
+      submit_button: "Shorten"
+      error_occurred: "An error occurred. Try changing the name."
+      link_created: "The link was successfully created!"
+      try_again: Try again
       
