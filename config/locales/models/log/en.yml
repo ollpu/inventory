@@ -4,3 +4,13 @@ en:
     models:
       log: Log
       log_all: Logs
+    attributes:
+      log:
+        description: Description
+        items: Affected items
+        
+  log:
+    errors:
+      no_target: "Log has to target atleast one item"
+      invalid_uid: "Log contains invalid item uid"
+      invalid_modified: "Log's modified attribute is of invalid format"

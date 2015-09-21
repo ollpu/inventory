@@ -1,0 +1,6 @@
+
+en:
+  authorization:
+    no_user: "Please log in first."
+    not_authorized: "You are not authorized to perform this action."
+    invalid_credentials: "Invalid email-address or password."

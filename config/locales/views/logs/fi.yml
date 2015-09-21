@@ -1,0 +1,9 @@
+fi:
+  logs:
+    new:
+      title: Uusi loki
+      add_by_uid: "Lisää kalu UID:n perusteella"
+      add: Lisää
+      add_item_not_found: "Vastaavaa kalua ei löydetty."
+    affected_items:
+      empty: "Ei vaikuta mihinkään."

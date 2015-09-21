@@ -1,0 +1,20 @@
+<%
+  @title = t('.title')
+  @clear_template = true
+%>
+
+<h1 class="login"><%= t('.inventory_login') %></h1>
+<%= form_tag sessions_path, class: 'login' do %>
+  <%= label_tag :email, t('.email') %>
+  <%= email_field_tag :email, params[:email], autofocus: true %>
+  
+  <%= label_tag :password, t('.password') %>
+  <%= password_field_tag :password, params[:password] %>
+  
+  <% if params[:navigate] %>
+    <%= hidden_field_tag :navigate, params[:navigate] %>
+  <% end %>
+  
+  <%= submit_tag t('.log_in') %>
+<% end %>
+ 

@@ -1,0 +1,57 @@
+<h2><%= t '.account_management' %></h2>
+
+<div class="model-errors">
+  <% @user.errors.any? and @user.errors.full_messages.each do |message| %>
+    <span class="error"><%= message %>. </span>
+  <% end %>
+</div>
+
+<%= form_for @user do |f| %>
+  <% admin_rights = current_user.admin? && current_user != @user %>
+
+  <div class="section">
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+  </div>
+  
+  <br>
+  
+  <div class="section">
+    <%= f.label :privileges %>
+    <%= f.select :privileges, options_for_select(User::PERMISSION_LEVELS.invert,
+        @user.privileges),
+      {},
+      disabled: (not admin_rights)
+    %>
+  </div>
+  
+  <br>
+  
+  <% unless admin_rights %>
+    <div class="section">
+      <%= f.label :old_password %>
+      <%= f.password_field :old_password %>
+    </div>
+
+    <div class="section">
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+    </div>
+  <% else %>
+    <div class="section">
+      <%= f.label :password %>
+      <%= f.password_field :password_admin %>
+    </div>
+  <% end %>
+  
+  <div class="section">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <br>
+  
+  <div class="section">
+    <span class="empty"></span>
+    <%= f.submit %>
+  </div>
+<% end %>

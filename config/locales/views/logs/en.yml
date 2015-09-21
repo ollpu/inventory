@@ -1,0 +1,10 @@
+en:
+  logs:
+    new:
+      title: "New Log"
+      add_by_uid: "Add item by UID"
+      add: Add
+      add_item_not_found: "An item with that UID was not found."
+    affected_items:
+      empty: "Affecting nothing."
+      

@@ -1,0 +1,10 @@
+
+en:
+  sessions:
+    new:
+      title: Log in
+      
+      inventory_login: "Inventory Login"
+      email: "E-mail:"
+      password: "Password:"
+      log_in: "Log in"

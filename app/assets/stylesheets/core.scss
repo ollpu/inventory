@@ -1,10 +1,7 @@
 // Core SCSS file.
 // Should be included on all pages
 
-$content_font: 'Noto Sans';
-$link_color: #205ba1;
-$radius: 0.3em;
-$header_bg: #F0F0F0;
+@import "shared/variables";
 
 html {
   //Always show scroll-bar to prevent sudden width-changes when navigating pages
@@ -13,18 +10,25 @@ html {
 
 body {
   background-color: #dae2e9;
-  margin: 0;
+  margin: 0 5em;
+  padding: 0 1em;
+}
+
+body.clear {
+  max-width: 24em;
+  margin: 0 auto;
+  margin-top: 12em;
 }
 
 div.mass-container {
   font-family: $content_font;
-  margin: 1em 6em;
+  margin: 1em 0;
   // TODO: Decide on a max-width
   // max-width: 32cm;
   background-color: white;
-  padding: 0.6em 0.8em;
+  padding: $mass_padding $mass_padding;
   border-radius: $radius;
-  box-shadow: 0px 0px 4px #BBB;
+  box-shadow: $shadow;
 }
 
 div.header { // Topmost portion of page. Also .mass-container
@@ -69,33 +73,6 @@ div.header { // Topmost portion of page. Also .mass-container
   }
 }
 
-.mat-icns { // Material Icons (Modified from https://github.com/google/material-design-icons)
-  font-family: 'Material Icons' !important;
-  font-weight: normal;
-  font-style: normal;
-  font-size: 24px;  /* Preferred icon size */
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-  line-height: 1;
-  text-transform: none;
-  letter-spacing: normal;
-  word-wrap: normal;
-  
-  position: relative;
-  top: 0.2em;
-
-  /* Support for all WebKit browsers. */
-  -webkit-font-smoothing: antialiased;
-  /* Support for Safari and Chrome. */
-  text-rendering: optimizeLegibility;
-
-  /* Support for Firefox. */
-  -moz-osx-font-smoothing: grayscale;
-
-  /* Support for IE. */
-  font-feature-settings: 'liga';
-}
 
 ul.trivia { // Trivia display
   font-size: small;
@@ -103,79 +80,27 @@ ul.trivia { // Trivia display
   list-style-type: none;
 }
 
-table.nav { // Navigation table
-  width: 100%;
-  
-  td.home, td.menu-btn { // Home & Menu button containers
-    width: 28px;
-    padding-left: 0.2em;
-    a { // Anchor inside
-      text-decoration: none;
-      color: #444;
-    }
-  }
-  td.menu-btn { // Menu button container
-    display: none;
-    text-align: right;
-    padding-left: 0;
-    padding-right: 0.2em;
-  }
-  td.items { // Navigation links container
-    padding-left: 0.4em;
-    a {
-      font-family: "Lato";
-      padding: 0 0.5em;
-      text-decoration: none;
-      color: $link_color;
-    }
-    a+ul { // Item submenu
-      display: block;
-      list-style-type: none;
-      position: absolute;
-      z-index: 10;
-      
-      background: $header_bg;
-      padding: 0.3em 0.4em;
-      margin: -0.05em 0;
-      border-radius: 0 0 $radius $radius;
-      
-      margin-left: -0.4em;
-      overflow: hidden;
-      
-      transition: visibility 0s ease 1s,
-                  max-height 1s ease,
-                  box-shadow 2s ease;
-      visibility: hidden;
-      max-height: 0;
-      
-      hr {
-        margin: 3px 0 0.5px 0;
-        border: 1px solid gray;
-        border-top: none;
-      }
-    }
-    a:hover+ul, a+ul:hover { // Item submenu on hover
-      box-shadow: 3px 3px 3px -2px #BBB, -3px 3px 3px -2px #BBB;
-      visibility: visible;
-      transition-delay: 0s !important;
-      transition: visibility 0s ease 1s,
-                  max-height 1s ease,
-                  box-shadow 0.3s ease;
-      opacity: 1;
-      max-height: 100%;
-    }
-  }
-}
 
 div.content { // Also .mass-container
   min-height: 200px;
   h1 { font-size: 28px; margin: 0.3em 0; }
   h2 { font-size: 24px; margin: 0.3em 0; }
+  
+  .flash {
+    display: block;
+    width: 100%;
+    position: relative;
+    margin: 0.1em 0;
+    left: -$mass_padding;
+    padding: 0 $mass_padding;
+  }
+  .flash.notice { background-color: #e2d778; }
+  .flash.alert  { background-color: #e27878; }
 }
 
 div.footer { // Bottom display. Not .mass-container
   font-family: $content_font;
-  margin: 1em 6em;
+  margin: 1em 0;
   padding: 0.2em 0.4em;
   a {
     text-decoration: none;

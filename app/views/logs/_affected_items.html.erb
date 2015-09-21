@@ -1,0 +1,11 @@
+<%# Partial for displaying an affected items list %>
+
+<div class="affected-items" id="affected-items">
+  <% items and items.each do |uid| %>
+    <% item = Item.find_by_uid uid %>
+    <% if item %>
+      <%= render 'affected_item', item: item %>
+    <% end %>
+  <% end %>
+  <span class="affects-nothing"><%= t '.empty' if items.empty? %></span>
+</div>

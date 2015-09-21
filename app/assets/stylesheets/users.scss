@@ -1,3 +1,41 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "shared/variables";
+
+form.edit_user {
+  display: table;
+  .section {
+    display: table-row;
+    label, input, select, span, div {
+      display: table-cell;
+    }
+    select {
+      width: 100%;
+    }
+    label {
+      padding-right: 0.6em;
+    }
+  }
+}
+
+div.model-errors {
+  color: red;
+  padding-bottom: 0.6em;
+}
+
+table.users-list {
+  border-collapse: collapse;
+  
+  a.mat-icns {
+    color: #444;
+  }
+  thead {
+    text-weight: bold;
+  }
+  td {
+    border-bottom: 1px solid gray;
+    padding: 0.2em 0.4em;
+  }
+}

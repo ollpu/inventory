@@ -1,7 +1,15 @@
+<%
+  page_title = t('.title')
+  # @title can be modified from controller or view (@title=)
+  if @title.present?
+    page_title << " - #{@title}"
+  end
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= t '.title' %></title>
+  <title><%= page_title %></title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -10,23 +18,29 @@
     google: ['Noto Sans', 'Lato', 'Material Icons']
   }) %>
 </head>
-<body>
+<body class="<%= "clear" if @clear_template %>">
 
-<div class="mass-container header">
-  <h1>
-    <%= t '.inventory_of', peer: t('.peer') %>
-    <%= render 'trivia' %>
-  </h1>
-  <%= render 'layouts/nav' %>
-</div>
+<% unless @clear_template %>
+  <div class="mass-container header">
+    <h1>
+      <%= t '.inventory_of', peer: t('.peer') %>
+      <%= render 'trivia' %>
+    </h1>
+    <%= render 'layouts/nav' %>
+  </div>
+<% end %>
 
 <div class="mass-container content">
+  <% flash.each do |name, msg| -%>
+    <%= content_tag :div, msg, class: "flash #{name}" %>
+  <% end -%>
   <%= yield %>
 </div>
 
 <div class="footer">
   © Roope Salmi 2015
   - <%= link_to t('.source_code'), 'https://github.com/ollpu/inventory/' %>
+  - <%= render 'layouts/lyli' %>
 </div>
 
 </body>

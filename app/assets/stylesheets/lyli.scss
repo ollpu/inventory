@@ -1,0 +1,42 @@
+@import "shared/variables";
+
+
+
+#lyli-form {
+  background-color: white;
+  margin: 0.4em auto;
+  padding: $mass_padding;
+  border-radius: $radius;
+  max-width: 16cm;
+  box-shadow: $shadow;
+  
+  display: flex;
+  
+  .rest {
+    order: 1;
+    flex-grow: 1;
+  }
+  
+  .title {
+    display: block;
+    font-weight: bold;
+  }
+  .response {
+    display: block;
+    order: 1;
+    flex-grow: 1;
+  }
+  .close {
+    order: 2;
+    font-size: 24px;
+    width: 1em;
+    a {
+      color: gray;
+      transition-duration: 0.4s;
+      position: static;
+    }
+    a:hover {
+      color: black;
+    }
+  }
+}

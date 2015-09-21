@@ -10,5 +10,19 @@ fi:
     nav:
       all: Kaikki
       new: Uusi
+      
+      my_account: Tilini
+      logout: Kirjaudu ulos
+      manage_users: Hallitse käyttäjiä
+      
       search_anything: "Hae mitä tahansa..."
+    lyli:
+      shorten_with_lyli: Lyhennä osoite Lylillä
+      explanation: "Luo lyhyt linkki tälle sivulle käyttäen Lyli-palvelua"
+      name_title: "lyli.fi/"
+      name_placeholder: "valitaan automaattisesti"
+      submit_button: "Lyhennä"
+      error_occurred: "Tapahtui virhe. Yritä vaihtaa lyhenteen nimeä."
+      link_created: "Linkki luotiin onnistuneesti!"
+      try_again: Yritä uudestaan
       

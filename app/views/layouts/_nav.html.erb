@@ -1,31 +1,57 @@
 <%# Navigation partial -%>
 
-<table class="nav">
-  <td class="home"><%= link_to 'home', root_url, :class => 'mat-icns' %></td>
-  <td class="mat-icns menu-btn"><a href="javascript:void(0);">menu</a></td>
+<div class="nav" id="navigation">
+  <div class="home"><%= link_to 'home', root_url, :class => 'mat-icns' %></div>
+  <div class="mat-icns menu-btn"><a href="">menu</a></div>
   
-  <td class="items">
+  <div class="items">
     <% _scope = [:activerecord, :models] %>
     
-    <%= link_to t(:item_all, scope: _scope), 'javascript:void(0);' %>
-    <ul>
-      <li><%= link_to t('.all'), items_path %></li>
-      <hr />
-      <li><%= link_to t(:cable_all, scope: _scope), items_path(:type => "Cable") %></li>
-      <li><%= link_to t(:device_all, scope: _scope), items_path(:type => "Device") %></li>
-      <li><%= link_to t(:misc_all, scope: _scope), items_path(:type => "Misc") %></li>
-      <hr />
-      <li><%= link_to t('.new'), new_item_path %></li>
-    </ul>
+    <%# Navigation links schema:
+        <span class="dropdown"> <-- Dropdown menu container
+          <a></a>               <-- Title
+          <ul>                  <-- Dropdown container
+            <a></a>             <-- Dropdown option
+            <hr>                <-- Separator line (optional)
+            <a></a>             <-- Another dropdown option
+          </ul>
+        </span>
+        <a></a>                 <-- Non-dropdown link
+    %>
+    
+    <span class="dropdown"> <!-- Items menu -->
+      <%= link_to t(:item_all, scope: _scope), 'javascript:void(0);' %>
+      <ul>
+        <li><%= link_to t('.all'), items_path %></li>
+        <hr />
+        <li><%= link_to t(:cable_all, scope: _scope), items_path(:type => "Cable") %></li>
+        <li><%= link_to t(:device_all, scope: _scope), items_path(:type => "Device") %></li>
+        <li><%= link_to t(:misc_all, scope: _scope), items_path(:type => "Misc") %></li>
+        <hr />
+        <li><%= link_to t('.new'), new_item_path %></li>
+      </ul>
+    </span>
+    
     <%= link_to t(:event_all, scope: _scope), events_path %>
-    <%= link_to t(:user, scope: _scope), users_path %>
-  </td>
+    
+    <span class="dropdown"> <!-- User(s) menu -->
+      <%= link_to t(:user, scope: _scope), 'javascript:void(0);' %>
+      <ul>
+        <li><%= link_to t('.my_account'), user_path(current_user) %></li>
+        <li><%= link_to t('.logout'), logout_path %></li>
+        <% if current_user.admin? %> <%# Admin only %>
+          <hr />
+          <li><%= link_to t('.manage_users'), users_path %>
+        <% end %>
+      </ul>
+    </span>
+  </div>
   
-  <td class="search">
+  <div class="search">
     <%= form_tag search_path, :class => 'search', :method => 'GET', :enforce_utf8 => false do %>
       <%= text_field_tag :q, "", placeholder: t('.search_anything'), required: true %>
       <%= submit_tag 'search', class: 'mat-icns', name: '' %>
     <% end %>
-  </td>
+  </div>
   
-</table>
+</div>

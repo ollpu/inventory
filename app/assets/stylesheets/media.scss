@@ -3,39 +3,30 @@
 
 @media screen and (max-width: 32cm) {
   // Apply max width instead of static padding
-  div.mass-container, div.footer {
-    margin: 1em auto;
-    max-width: 28cm - 2cm;
+  body {
+    margin: 0 auto;
+    max-width: 28cm - 1.2cm;
   }
 }
 
-@media screen and (max-width: 28cm) {
-  // Small static margin
-  div.mass-container, div.footer {
-    margin: 1em 1em;
-  }
-}
 
-@media screen and (max-width: 14cm) {
+
+@media screen and (max-width: 600px) {
   // Collapse navigation items & search bar into a menu (closed by default)
-  table.nav {
+  div.nav {
+    flex-wrap: wrap;
     .menu-btn, .home {
       display: inline-block !important;
     }
-    .home {
-      position: absolute;
-    }
-    .menu-btn {
-      margin-left: 100%;
-      left: -1em;
-    }
     .items, .search {
+      width: 100%;
       display: none;
     }
     .isOpen {
       display: block;
     }
     .items {
+      
       padding-top: 0.4em;
       a:first-of-type {
         padding-left: 0;
@@ -52,12 +43,21 @@
       
     }
   }
+  #lyli-name-field {
+    width: 12em;
+  }
+}
+
+@media screen and (max-width: 12cm) {
+  body.clear {
+    margin-top: 1em;
+  }
 }
 
 @media screen and (max-width: 9cm) {
   // Make navigation items & search bar font size smaller
-  table.nav {
-    form.search input, td.items a {
+  div.nav {
+    form.search input, div.items a {
       font-size: 12px;
     }
   }

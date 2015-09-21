@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150725200601) do
+ActiveRecord::Schema.define(version: 20150826154439) do
 
   create_table "events", force: :cascade do |t|
     t.string   "name"
@@ -43,8 +43,11 @@ ActiveRecord::Schema.define(version: 20150725200601) do
     t.string   "password_salt"
     t.string   "password_hash"
     t.string   "full_name"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.integer  "privileges"
+    t.string   "password_reset_token"
+    t.datetime "password_reset_time"
   end
 
 end

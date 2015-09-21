@@ -8,7 +8,7 @@
   
   <div class="section">
     <%= f.label :type %>
-    <%= f.select :type, options_for_select(Item::TYPES) %>
+    <%= f.select :type, options_for_select(Item::TYPES.invert) %>
   </div>
   
   <div class="section">

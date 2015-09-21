@@ -6,13 +6,14 @@ class Log < ActiveRecord::Base
   # TODO: This section was deemed too complicated by CodeClimate,
   #       simplify it!
   validate do |log|
+    t_scope = [:log, :errors]
     if log.items.length == 0
-      log.errors[:items] << "Log has to target atleast one item" # Translate!
+      log.errors[:items] << translate(:no_target, scope: t_scope)
     end
     # Check validity of all items (uids)
     log.items.each do |uid|
       unless /\h{8}-\h{4}-\h{4}-\h{4}-\h{12}/.match(uid)
-        log.errors[:items] << "Log contains invalid item uid" # Translate!
+        log.errors[:items] << translate(:invalid_uid, scope: t_scope)
       end
     end
     
@@ -20,7 +21,7 @@ class Log < ActiveRecord::Base
         log.modified[:added].is_a?(Array) and
         log.modified[:removed].is_a?(Array)
       )
-      #log.errors[:modified] << "Log's modified attribute is of invalid format" #T!
+      #log.errors[:modified] << translate(:invalid_modified, scope: t_scope)
     end
   end
   
@@ -42,4 +43,5 @@ class Log < ActiveRecord::Base
   def apply
     # TODO
   end
+  
 end

@@ -23,18 +23,23 @@ edit_toggle = ->
     $(edit_button).html 'edit'
     window.location.hash = ''
 
+color_features = ->
+  # Assign a semi-unique hue to every feature-span, based on its text (content)
+  $('span.item_type.feature').each (i, el) ->
+    me = $(el)
+    content = me.html()
+    me.css('background-color', "hsl(#{hue_from_string content}, 59%, 67%)")
+
 ready = ->
   if window.location.hash is '#edit'
     edit_toggle() # Toggle edit mode on
   
   $('form.edit_item a#edit').click edit_toggle
   
-  # Assign a semi-unique hue to every feature-span, based on its text (content)
-  $('span.item_type.feature').each (i, el) ->
-    me = $(el)
-    content = me.html()
-    me.css('background-color', "hsl(#{hue_from_string content}, 59%, 67%)")
+  color_features()
     
 $(document).ready(ready)
 # For turbolinks
 $(document).on('page:load', ready)
+# For ajax requests (which might add new feature-spans)
+$(document).ajaxComplete(color_features)

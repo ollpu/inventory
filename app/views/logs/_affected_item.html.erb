@@ -1,0 +1,5 @@
+<div class="item-minidisplay <%= html_class if defined? html_class %>" style="<%= style if defined? style %>">
+  <span class="title"><%= link_to item.title, item_path(item) %></span>
+  <span class="features"><%= render 'items/features', item: item %></span>
+  <span class="uid"><%= item.uid %></span>
+</div>

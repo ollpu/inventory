@@ -2,8 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$link_color: #205ba1;
-$content_font: 'Noto Sans';
+@import "shared/variables";
 
 span.item_type {
   background-color: #DDD;
@@ -148,7 +147,7 @@ form.new_item {
   display: table;
   .section {
     display: table-row;
-    label, input, select, span.empty {
+    label, input, select, span {
       display: table-cell;
     }
     select {

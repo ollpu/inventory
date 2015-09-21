@@ -1,0 +1,23 @@
+<%= link_to t('.shorten_with_lyli'), '', id: 'lyli' %>
+<%= form_tag 'http://api.lyli.fi', authenticity_token: false, id: 'lyli-form',
+  style: 'display: none;' do %>
+  <span class="close"><a class="mat-icns" href="">close</a></span>
+  <div class="rest"> <%# Everything except close %>
+    <span class="title">
+      <%= t('.explanation') %>
+    </span>
+    
+    <%= label_tag :name, t('.name_title') %>
+    <%= text_field_tag :name, '', placeholder: t('.name_placeholder'),
+      id: 'lyli-name-field' %>
+    
+    <%= submit_tag t('.submit_button') %>
+  </div>
+  <span class="error response" id="lyli-error" style="display: none;">
+    <%= t('.error_occurred') %>
+    <%= link_to t('.try_again'), '', id: 'lyli' %>
+  </span>
+  <span class="response" id="lyli-success" style="display: none;">
+    <%= t('.link_created') %> <a id="lyli-success-link"></a>
+  </span>
+<% end %>

@@ -1,0 +1,25 @@
+<h2><%= t '.title' %></h2>
+
+<%= link_to t('.new_user'), new_user_path %>
+<table class="users-list">
+  <thead><tr>
+    <td><%= User.human_attribute_name(:email) %></td>
+    <td><%= User.human_attribute_name(:full_name) %></td>
+    <td><%= User.human_attribute_name(:privileges) %></td>
+    <td><%= t('.actions') %></td>
+  </tr></thead>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.email %></td>
+      <td><%= user.full_name %></td>
+      <td><%= User::PERMISSION_LEVELS[user.privileges] %></td>
+      <td class="actions">
+        <%= link_to 'edit', user_path(user), class: 'mat-icns' %>
+        <%= link_to 'delete', user_path(user), method: :delete,
+          data: { confirm: t('.remove_confirm', email: user.email) },
+          class: 'mat-icns' %>
+        <%# WIP: = link_to 'email', '#', class: 'mat-icns' %>
+      </td>
+    </tr>
+  <% end %>
+</table>

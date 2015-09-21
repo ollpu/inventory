@@ -1,9 +1,24 @@
 Rails.application.routes.draw do
   
+  get 'login' => 'sessions#new', as: 'login'
+  get 'logout' => 'sessions#destroy', as: 'logout'
+  post 'authenticate' => 'sessions#create', as: 'sessions'
+  
   root 'index#index'
   get 'search' => 'search#results'
+  
+  get 'logs/add_affected_item' => 'logs#add_affected_item'
+  
   resources :logs, :events, :users
   resources :items, param: :uid
+  
+  scope '/selection' do
+    match 'select_single' => 'selections#select_single', via: [:get, :post]
+    match 'deselect_single' => 'selections#deselect_single', via: [:get, :post]
+    match 'select_array' => 'selections#select_array', via: [:get, :post]
+    match 'deselect_array' => 'selections#deselect_array', via: [:get, :post]
+    get 'clear' => 'selections#clear'
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

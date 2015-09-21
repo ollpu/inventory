@@ -1,0 +1,9 @@
+
+end:
+  user_mailer:
+    send_password_token:
+      subject: "Your Inventory password"
+      
+      your_password: "Your password to Inventory"
+      admin_sent: "An admin has sent you a password setting link."
+      set_new_password: "You can set your new password here:"
