@@ -5,6 +5,7 @@ fi:
       list_items_by_type: "Kaikki tyypin \"%{type}\" kalut"
       list_all_items: "Kaikki kalut"
       nothing_here: "Täällä ei ole mitään..."
+      select_all: "Valitse kaikki"
     new:
       title: Uusi kalu
     show:

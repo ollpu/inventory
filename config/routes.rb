@@ -13,10 +13,14 @@ Rails.application.routes.draw do
   resources :items, param: :uid
   
   scope '/selection' do
-    match 'select_single' => 'selections#select_single', via: [:get, :post]
-    match 'deselect_single' => 'selections#deselect_single', via: [:get, :post]
-    match 'select_array' => 'selections#select_array', via: [:get, :post]
-    match 'deselect_array' => 'selections#deselect_array', via: [:get, :post]
+    match 'select_single' => 'selections#select_single', via: [:get, :post],
+      as: 'select_single'
+    match 'deselect_single' => 'selections#deselect_single', via: [:get, :post],
+      as: 'deselect_single'
+    match 'select_array' => 'selections#select_array', via: [:get, :post],
+      as: 'select_array'
+    match 'deselect_array' => 'selections#deselect_array', via: [:get, :post],
+      as: 'deselect_array'
     get 'clear' => 'selections#clear'
   end
 

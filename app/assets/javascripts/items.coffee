@@ -30,6 +30,10 @@ color_features = ->
     content = me.html()
     me.css('background-color', "hsl(#{hue_from_string content}, 59%, 67%)")
 
+select_all_items = (e) ->
+  e.preventDefault()
+  $('#list-items-form').submit()
+
 ready = ->
   if window.location.hash is '#edit'
     edit_toggle() # Toggle edit mode on
@@ -37,7 +41,9 @@ ready = ->
   $('form.edit_item a#edit').click edit_toggle
   
   color_features()
-    
+  
+  $('#list-items-form .submit').click select_all_items
+  
 $(document).ready(ready)
 # For turbolinks
 $(document).on('page:load', ready)

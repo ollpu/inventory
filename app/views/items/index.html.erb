@@ -6,15 +6,22 @@
   <% end %>
 </h1>
 <% unless @items.size == 0 %>
-  <div class="item_list">
-  <% @items.each do |item| %>
-    <%= link_to item_path(item) do %>
-      <span class="title"><%= item.title %></span>
-      <span class="item_type core"><%= item.get_type_name %></span>
-      <%= render 'features', :item => item %>
+  <%= form_tag select_array_path,
+      { remote: true, id: 'list-items-form' } do %>
+    <%= link_to t('.select_all'), nil, class: 'submit' %>
+    <div class="item_list">
+    <% @items.each do |item| %>
+      <%= link_to item_path(item) do %>
+        <span class="title"><%= item.title %></span>
+        <span class="item_type core"><%= item.get_type_name %></span>
+        <%= render 'features', :item => item %>
+      <% end -%>
+      <%# Rails doesn't really natively support arrays in forms, so I made
+          this manually %>
+      <input type="hidden" name="uids[]" value="<%= item.uid %>">
     <% end -%>
-  <% end -%>
-  </div>
+    </div>
+  <% end %>
 <% else -%>
   <div class="nothing"><%= t('.nothing_here') %></div>
 <% end -%>

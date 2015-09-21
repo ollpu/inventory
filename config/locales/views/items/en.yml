@@ -5,6 +5,7 @@ en:
       list_items_by_type: "All items with type \"%{type}\""
       list_all_items: "All items"
       nothing_here: "There's nothing here..."
+      select_all: "Select all"
     new:
       title: New item
     show:

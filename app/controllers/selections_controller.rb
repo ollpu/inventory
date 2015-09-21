@@ -21,9 +21,12 @@ class SelectionsController < ApplicationController
   def select_array
     authorize :selections
     generate_set
-    session[:selection].merge params[:uids]
-    
-    render json: { ok: true }
+    if params[:uids] and params[:uids].is_a?(Array)
+      session[:selection].merge params[:uids]
+      render json: { ok: true }
+    else
+      render status: 400, json: { error: 'Invalid input' }
+    end
   end
   
   def deselect_array
